@@ -1,0 +1,3768 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+    <form-beans>
+
+        <!-- Menu -->
+        <form-bean name="services_menuContextForm" type="eu.cec.admin.sysper2.web.services.menu.forms.MenuContextForm" />
+
+        <!-- NDP -->
+        <form-bean name="ndpForm" type="eu.cec.admin.sysper2.web.services.ndp.forms.NdpForm" />
+
+        <!-- Organisation -->
+        <form-bean name="organisationBean" type="eu.cec.admin.sysper2.web.org.forms.OrganisationForm" />
+        <!-- CHG1240: hyperjump facility in org chart navigator-->
+        <form-bean name="org_OrgNavigator_Form" type="eu.cec.admin.sysper2.web.org.forms.OrgNavigatorForm" />
+        <!-- END CHG1240: hyperjump facility in org chart navigator-->
+
+        <!-- Job & job holder -->
+        <form-bean name="job_contextForm" type="eu.cec.admin.sysper2.web.job.forms.JobContextForm" />
+        <form-bean name="editJobBean" type="eu.cec.admin.sysper2.web.job.forms.EditJobForm" />
+        <form-bean name="editJobPreferencesBean" type="eu.cec.admin.sysper2.web.job.forms.EditJobPreferencesForm" />
+        <form-bean name="jobOccupationsForm" type="eu.cec.admin.sysper2.web.job.forms.JobOccupationsForm" />
+        <form-bean name="selectJobholderForm" type="eu.cec.admin.sysper2.web.job.forms.SelectPersonForm" />
+        <form-bean name="modifyJobStateBean" type="eu.cec.admin.sysper2.web.job.forms.ModifyJobStateForm" />
+        <form-bean name="transferJobsBean" type="eu.cec.admin.sysper2.web.job.forms.TransferJobsForm" />
+        <form-bean name="makeJobsObsoleteBean" type="eu.cec.admin.sysper2.web.job.forms.MakeJobsObsoleteForm" />
+        <form-bean name="sortJobsBean" type="eu.cec.admin.sysper2.web.job.forms.SortJobsForm" />
+        <form-bean name="checkActiveJapsForm" type="eu.cec.admin.sysper2.web.job.forms.CheckActiveJapsForm" />
+        
+        <!-- administration form bean -->
+        <form-bean name="bankHolidaysForm" type="eu.cec.admin.sysper2.web.services.administration.holidays.forms.CityBankHolidaysForm" />
+        <form-bean name="searchAsyncRequestsForm" type="eu.cec.admin.sysper2.web.services.async.forms.SearchAsyncRequestsForm" />
+
+        <!-- contact form bean -->
+        <form-bean name="contactBean" type="eu.cec.admin.sysper2.web.services.contact.forms.ContactForm" />
+
+	    <!-- ACCESS RIGHTS -->
+
+        <form-bean name="accessRightsForm" type="eu.cec.admin.sysper2.web.security.forms.AccessRightsForm"/>
+		<form-bean name="useCasesForm" type="eu.cec.admin.sysper2.web.security.forms.UseCasesForm"/>
+		<form-bean name="saveUseCasesForm" type="eu.cec.admin.sysper2.web.security.forms.SaveUseCasesForm"/>    
+	    <form-bean name="selectPersonForm" type="eu.cec.admin.sysper2.web.security.forms.SelectPersonForm"/>
+	    <form-bean name="editRoleForm" type="eu.cec.admin.sysper2.web.security.forms.EditRoleForm"/>
+
+	    <!-- Person(s) -->
+	    <form-bean name="searchPersonForm" type="eu.cec.admin.sysper2.web.per.search.forms.SearchPersonForm" />
+        <!-- R5.1 NEW0568: PER - PDFs pour les actes de mutation / chg affectation / reorg <local> -->
+	    <form-bean name="per_ActChangeForm" type="eu.cec.admin.sysper2.web.per.forms.ActChangeForm" />
+        <!-- End NEW0568: PER - PDFs pour les actes de mutation / chg affectation / reorg <local> -->
+
+        <!-- CDR REPORT-->
+        <form-bean name="cdrFormBean" type="eu.cec.admin.sysper2.web.cdr.forms.CdrFormBean" />
+        <form-bean name="cdrStepsForm" type="eu.cec.admin.sysper2.web.cdr.report.properties.forms.CdrStepsForm" />
+        <form-bean name="cdr_report_motivationForm" type="eu.cec.admin.sysper2.web.cdr.report.forms.MotivationForm" />
+        <form-bean name="cdrManageJobsForm" type="eu.cec.admin.sysper2.web.cdr.manage.beans.CdrJobsForm" />
+        <form-bean name="cdrModifyAppraisalPeriodForm" type="eu.cec.admin.sysper2.web.cdr.manage.forms.ModifyAppraisalPeriodForm" />
+        <form-bean name="cdrAttachmentForm" type="eu.cec.admin.sysper2.web.cdr.report.attachments.forms.AttachmentForm" />
+
+        <!-- CDR DETAILS -->
+        <form-bean name="jobHolder_cdrHistory_Form" type="eu.cec.admin.sysper2.web.cdr.overview.cdr_details.forms.JobHolderCdrHistoryForm" />
+
+        <!-- CDR OBJECTIVES -->
+        <form-bean name="editObjectiveForm" type="eu.cec.admin.sysper2.web.cdr.objectives.forms.EditObjectiveForm" />
+        <form-bean name="validateObjectivesForm" type="eu.cec.admin.sysper2.web.cdr.objectives.forms.ValidateObjectivesForm" />
+        <form-bean name="displayOrderObjectivesForm" type="eu.cec.admin.sysper2.web.cdr.objectives.forms.DisplayOrderObjectivesForm" />
+        <form-bean name="objectiveVersionForm" type="eu.cec.admin.sysper2.web.cdr.objectives.forms.ObjectiveVersionForm" />
+        <form-bean name="reuseObjectiveForm" type="eu.cec.admin.sysper2.web.cdr.objectives.forms.ReuseObjectiveForm" />
+
+        <!-- CDR STATISTICS -->
+        <form-bean name="searchStatisticsForm" type="eu.cec.admin.sysper2.web.cdr.statistics.forms.SearchStatisticsForm" />
+        <form-bean name="searchStageStatisticsForm" type="eu.cec.admin.sysper2.web.cdr.statistics.stages.forms.SearchStageReportsForm" />
+        <form-bean name="manageProbationReportForm" type="eu.cec.admin.sysper2.web.cdr.statistics.forms.ManageProbationReportForm" />
+        <form-bean name="manageCDRCreationForm" type="eu.cec.admin.sysper2.web.cdr.statistics.forms.ManageCDRCreationForm" />
+
+        <!-- CDR REUSE -->
+        <form-bean name="reuseCdrForm" type="eu.cec.admin.sysper2.web.cdr.report.forms.ReuseCdrForm" />
+
+        <!-- org keywords -->
+        <form-bean name="org_keyword" type="eu.cec.admin.sysper2.web.org.forms.KeywordForm" />
+        <form-bean name="org_unit_keywords" type="eu.cec.admin.sysper2.web.org.forms.UnitKeywordsForm" />
+
+        <form-bean name="org_UnitPropertiesForm" type="eu.cec.admin.sysper2.web.org.forms.UnitPropertiesForm" />
+        <form-bean name="org_SelectScopeForm" type="eu.cec.admin.sysper2.web.org.forms.SelectScopeForm" />
+        <form-bean name="org_ActorNavigationForm" type="eu.cec.admin.sysper2.web.org.forms.ActorNavigatorForm" />
+
+        <form-bean name="org_reorg_overview_SearchForm" type="eu.cec.admin.sysper2.web.org.reorg.forms.SearchForm" />
+        <form-bean name="org_reorg_details_organisation_SelectReorgScopeForm"
+                   type="eu.cec.admin.sysper2.web.org.reorg.organisation.forms.SelectReorgScopeForm" />
+        <form-bean name="org_reorg_details_ReorganisationContextForm" type="eu.cec.admin.sysper2.web.org.reorg.forms.ReorganisationContextForm" />
+        <form-bean name="org_reorg_details_overview_ProposalsOrderForm" type="eu.cec.admin.sysper2.web.org.reorg.overview.forms.ProposalsOrderForm" />
+        <form-bean name="org_reorg_details_properties_PropertiesForm" type="eu.cec.admin.sysper2.web.org.reorg.properties.forms.PropertiesForm" />
+        <form-bean name="org_reorg_details_organisation_EntityForm" type="eu.cec.admin.sysper2.web.org.reorg.organisation.forms.EntityForm" />
+        <form-bean name="org_reorg_details_organisation_EntityOrderForm" type="eu.cec.admin.sysper2.web.org.reorg.organisation.forms.EntityOrderForm" />
+        <form-bean name="org_reorg_details_organisation_JobForm" type="eu.cec.admin.sysper2.web.org.reorg.organisation.forms.JobForm" />
+        <form-bean name="org_reorg_details_organisation_AssignmentForm" type="eu.cec.admin.sysper2.web.org.reorg.organisation.forms.AssignmentForm" />
+        <form-bean name="org_reorg_details_procedure_WorkflowForm" type="eu.cec.admin.sysper2.web.org.reorg.procedure.forms.WorkflowForm" />
+
+        
+        <form-bean name="secondary_jobcontexts_dashboard_form" type="eu.cec.admin.sysper2.web.org.forms.SecondaryJobContextsDashboardForm" />
+
+        <!-- NEW0382: security clearance information in job properties (begin) -->
+        <form-bean name="job_securityClearanceOverviewForm" type="eu.cec.admin.sysper2.web.job.forms.SecurityClearanceOverviewForm" />
+        <!-- NEW0382: security clearance information in job properties (end) -->
+        <form-bean name="job_selectPersonOccupationForm" type="eu.cec.admin.sysper2.web.job.forms.SelectPersonOccupationForm" />
+        <form-bean name="job_selectJobForm" type="eu.cec.admin.sysper2.web.job.forms.SelectJobForm" />
+
+        <!--	NEW0511 (begin) Add city property to job (ville d'affectation)-->
+        <form-bean name="common_selectCityForm" type="eu.cec.admin.sysper2.web.common.forms.SelectCityForm" />
+        <!--	NEW0511 (end) Add city property to job (ville d'affectation)-->
+        <form-bean name="common_selectCountryForm" type="eu.cec.admin.sysper2.web.common.forms.SelectCountryForm" />
+        <!-- NEW0655: create language selection popup (begin) -->
+        <form-bean name="common_selectLanguageForm" type="eu.cec.admin.sysper2.web.common.forms.SelectLanguageForm" />
+        <!-- NEW0655: create language selection popup (end) -->
+
+        <form-bean name="receivedDelegationsForm" type="eu.cec.admin.sysper2.web.security.forms.ReceivedDelegationsForm" />
+        <form-bean name="receivedUsecasesForm" type="eu.cec.admin.sysper2.web.security.forms.ReceivedUsecasesForm" />
+        <form-bean name="securityPolicyForm" type="eu.cec.admin.sysper2.web.services.administration.forms.SecurityPolicyForm" />
+        
+        <form-bean name="rightsAdministrationForm" type="eu.cec.admin.sysper2.web.services.administration.forms.RightsAdministrationForm" />
+        <form-bean name="rightsAdministrationNewUseCaseForm" type="eu.cec.admin.sysper2.web.services.administration.forms.RightsAdministrationNewUseCaseForm" />
+        <form-bean name="rightsAdministrationGetUseCasesByRoleForm" type="eu.cec.admin.sysper2.web.services.administration.forms.RightsAdministrationGetUseCasesByRoleForm" />
+        <form-bean name="rightsAdministrationNewUseCaseForm" type="eu.cec.admin.sysper2.web.services.administration.forms.RightsAdministrationNewUseCaseForm" />
+        
+        <form-bean name="testSecurityForm" type="eu.cec.admin.sysper2.web.services.administration.forms.TestSecurityForm"/>
+        <form-bean name="services_messaging_retrySendingOrRemoveMessagesForm"
+                   type="eu.cec.admin.sysper2.web.services.administration.forms.RetrySendingOrRemoveMessagesForm" />
+        <form-bean name="services_messaging_modifyMessageDestinationForm"
+                   type="eu.cec.admin.sysper2.web.services.administration.forms.ModifyMessageDestinationForm" />
+        <form-bean name="wfl_workflow_motivation_popup_form" type="eu.cec.admin.sysper2.web.wfl.forms.WorkflowMotivationPopupForm" />
+        <form-bean name="wfl_next_actor_refreshment_form" type="eu.cec.admin.sysper2.web.wfl.forms.NextActorRefreshmentForm" />
+
+        <!-- R4.1 NEW0488: INFOTEL dashboard for reorg follow up -->
+        <form-bean name="org_statistics_searchOrganisationalUnitsForm" type="eu.cec.admin.sysper2.web.org.statistics.forms.SearchOrganisationalUnitsForm" />
+        <!-- End NEW0488: INFOTEL dashboard for reorg follow up -->
+
+        <form-bean name="JobAssignmentAnomaliesForm" type="eu.cec.admin.sysper2.web.job.forms.InconsistenciesForm" />
+
+        <form-bean name="attachmentForm" type="eu.cec.admin.sysper2.web.services.attachments.forms.AttachmentForm" />
+        <form-bean name="singleSignOutForm" type="eu.cec.admin.sysper2.web.common.forms.SingleSignOutForm" />
+        
+        <form-bean name="services_taskForm" type="eu.cec.admin.sysper2.web.services.task.forms.TaskForm" />
+        
+        <form-bean name="services_linksForm" type="eu.cec.admin.sysper2.web.services.links.forms.LinksForm" />
+        
+        <form-bean name="secondaryJobContextForm" type="eu.cec.admin.sysper2.web.job.forms.SecondaryJobContextForm" />
+        <form-bean name="demoForm" type="eu.cec.admin.sysper2.web.demo.crud.forms.DemoForm"/>
+        <form-bean name="adminAppUrlMessagesFrom" type="eu.cec.admin.sysper2.web.services.app.forms.AdminAppUrlMessagesSearchForm" />
+        <form-bean name="appUrlMessagesModifFrom" type="eu.cec.admin.sysper2.web.services.app.forms.AppUrlMessageModifForm" />
+        
+    </form-beans>
+
+    <!-- ================================= Global Exception Definitions -->
+
+    <global-exceptions>
+    </global-exceptions>
+
+    <!-- =================================== Global Forward Definitions -->
+
+    <global-forwards>
+
+        <forward contextRelative="true" name="login" path="/login.jsp" redirect="true" />
+        <forward contextRelative="true" name="login_failed" path="/login_fail.jsp" redirect="true" />
+        <forward contextRelative="true" name="logout" path="/logout.jsp" redirect="true" />
+        <forward contextRelative="true" name="menu" path="/home/menu.do" redirect="true" />
+        <forward contextRelative="true" name="unavailable" path="obsolete.common.error.unavailable" />
+        <forward contextRelative="true" name="failure" path="/jsp/common/error/error_c.jsp" />
+        <forward contextRelative="true" name="appFailure" path="/jsp/common/error/error_user.jsp" />
+        <forward contextRelative="true" name="systemFailure" path="/jsp/common/error/error_system.jsp" />
+        <forward contextRelative="true" name="unknownFailure" path="/jsp/common/error/error_bugs.jsp" />
+        <forward contextRelative="true" name="securityFailure" path="/jsp/common/error/error_access.jsp" />
+        <forward contextRelative="true" name="domFailure" path="/jsp/common/error/error_bugs.jsp" />
+        <forward contextRelative="true" name="webFailure" path="/jsp/common/error/error_bugs.jsp" />
+        <forward contextRelative="true" name="webSecurityFailure" path="/jsp/common/error/error_access.jsp" />
+        <forward contextRelative="true" name="webSecurityUnauthorized" path="/login_fail.jsp" />
+
+    </global-forwards>
+
+    <!-- =================================== Action Mapping Definitions -->
+
+    <action-mappings>
+
+		 <action path="/jscaf/test"
+		 		 type="eu.cec.admin.sysper2.web.common.actions.DemoAction"
+                 scope="request"
+                 validate="false">
+                <forward name="success" path="jscaf.test.components" />
+		  </action>
+	
+		 <action path="/playground/test"
+		 		 type="eu.cec.admin.sysper2.web.common.actions.DemoAction"
+		 		 name="demoForm"
+                 scope="request"
+                 validate="false">
+                <forward name="success" path="playground.test.components" />
+                <forward name="success_step2" path="/jsp/demo/playground/step2.jsp" />
+                <forward name="success_step3" path="/jsp/demo/playground/step3.jsp" />
+                <forward name="success_step4" path="/jsp/demo/playground/step4.jsp" />
+		  </action>
+
+
+        <!-- BUG0824 R3.1 sterckr - Used to predefine an unknown action in a html:form -->
+        <action path="/none"></action>
+        <!-- END BUG0824 -->
+
+        <!-- Menu (begin) -->
+        <!-- view roles menu (begin) -->
+        <action path="/home/menu"
+                type="eu.cec.admin.sysper2.web.services.menu.actions.ViewMenuAction"
+                name="services_menuContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.menu.roles" />
+            
+            
+        </action>
+        
+            <action path="/home/menu_old"
+                type="eu.cec.admin.sysper2.web.services.menu.actions.ViewMenuOldAction"
+                name="services_menuContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.menu.roles.old" />
+            
+            
+        </action>
+        <!-- view roles menu (end) -->
+        
+         <!-- SOLRJ CLIENT (BEGINS) -->
+        
+        <action path="/home/menuWithSearch"
+                type="eu.cec.admin.sysper2.web.services.menu.actions.ViewMenuAction"
+                name="services_menuContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.menu.roles.withsearch" />
+            
+            
+        </action>
+        
+        <action path="/home/searchWithoutJscaf"
+                type="eu.cec.admin.sysper2.web.services.menu.actions.ViewMenuAction"
+                name="services_menuContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.menu.roles.withoutJscaf" />
+            
+            
+        </action>
+		
+		 <action path="/home/readindex"
+                type="eu.cec.admin.sysper2.web.services.menu.actions.ReadIndexAction"
+                name="services_menuContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.menu.roles" />
+            
+            
+        </action>
+        	
+        
+        <!-- SOLRJ CLIENT (ENDS) -->
+        
+
+        <!-- view delegations menu (begin) -->
+        <action path="/home/menuDelegations"
+                type="eu.cec.admin.sysper2.web.services.menu.actions.ViewDelegationMenuAction"
+                name="services_menuContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.menu.delegations" />
+        </action>
+        <!-- view delegations menu (end) -->
+
+        <!-- view messages menu (begin) -->
+        <action path="/home/menuToDo"
+                type="eu.cec.admin.sysper2.web.services.menu.actions.ViewMessageMenuAction"
+                name="services_menuContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.menu.messages" />
+        </action>
+        <!-- view messages menu (end) -->
+
+        <!-- remove messages (begin) -->
+        <action path="/home/removeToDo"
+                type="eu.cec.admin.sysper2.web.services.menu.actions.RemoveMessageAction"
+                name="services_menuContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/home/menuToDo.do" redirect="true" />
+            <forward name="webFailure" path="/home/menuToDo.do" redirect="false" />
+            <forward name="appFailure" path="/home/menuToDo.do" redirect="false" />
+        </action>
+        <!-- remove messages (end) -->
+        <!-- Menu (begin) -->
+
+        <!-- Global mapping to the signature server -->
+        <action path="**/displaySignature"
+                type="eu.cec.admin.sysper2.web.doc.document.actions.DisplaySignatureAction">
+        </action>
+
+        <!-- ndp services -->
+        <action path="/services/ndp/viewPaySlips"
+                type="eu.cec.admin.sysper2.web.services.ndp.actions.ViewPaySlipsAction"
+                name="ndpForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="complete.service.ndp.view.payslips" />
+        </action>
+
+        <action path="/services/ndp/viewPhoneBills"
+                type="eu.cec.admin.sysper2.web.services.ndp.actions.ViewPhoneBillsAction"
+                name="ndpForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="complete.service.ndp.view.phonebills" />
+        </action>
+
+        <action path="/services/ndp/viewPaySlip" forward="edit_forwarder.ndp.payslip" />
+        <action path="/services/ndp/viewPaySlipPDF"
+                type="eu.cec.admin.sysper2.web.services.ndp.actions.CreatePaySlipPDFAction">
+        </action>
+        
+        <action path="/services/ndp/openViewLastPaySlipPDF" forward="ndp.view.last.payslip.open.redirect" />
+        
+        <action path="/services/ndp/viewLastPaySlipPDF"
+                type="eu.cec.admin.sysper2.web.services.ndp.actions.CreateLastPaySlipPDFAction">
+        </action>
+
+        <action path="/services/ndp/viewPhoneBill" forward="edit_forwarder.ndp.phonebill" />
+        <action path="/services/ndp/viewPhoneBillPDF"
+                type="eu.cec.admin.sysper2.web.services.ndp.actions.CreatePhoneBillPDFAction">
+        </action>
+
+        <action path="/services/ndp/viewDocuments"
+                type="eu.cec.admin.sysper2.web.services.ndp.actions.ViewPersonalFileDocumentAction"
+                name="ndpForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="complete.service.ndp.view.personalfile.documents" />
+        </action>
+
+        <action path="/services/ndp/viewAccessLog"
+                type="eu.cec.admin.sysper2.web.services.ndp.actions.ViewPersonalFileAccessLogAction"
+                name="ndpForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="complete.service.ndp.view.personalfile.accesslog" />
+        </action>
+
+        <action path="/services/ndp/viewDocument" forward="edit_forwarder.ndp.personalfile" />
+        <action path="/services/ndp/viewDocumentPDF"
+                type="eu.cec.admin.sysper2.web.services.ndp.actions.CreateDocumentPDFAction">
+        </action>
+
+        <!--  Required by Struts-Layout -->
+        <action path="/sort"
+                type="fr.improve.struts.taglib.layout.sort.SortAction">
+        </action>
+
+        <action path="/treeview"
+                type="fr.improve.struts.taglib.layout.treeview.TreeviewAction">
+        </action>
+
+        <!-- NEW0667: HRMForms integration   -->
+        <!--  <action path="/services/hrmforms/formRequest" forward="hrmforms.formrequest.redirect" /> --> 
+        <action path="/services/hrmforms/formRequest" 
+        		type="eu.cec.admin.sysper2.web.per.rights.actions.RequestAdministrativeCertificatesAction">
+        		 <forward name="success" path="hrmforms.formrequest.redirect"/>
+        		 <forward name="successEca" path="hrmforms.formrequest.redirect.eca"/>
+        </action>
+        
+        <action path="/services/hrmforms/chgtAddress" forward="hrmforms.chgtaddress.redirect" />
+        <action path="/services/hrmforms/contact" forward="hrmforms.contact.redirect" />
+        <action path="/services/hrmforms/chgtTelecom" forward="hrmforms.chgttelecom.redirect"/>
+        <!-- END NEW0667: HRMForms integration   -->
+
+        <!-- NEW0999: MIPS integration   -->
+        <action path="/services/mips/openIssues" forward="mips.openissues.redirect" />
+        <!-- END NEW0999: MIPS integration   -->
+        
+        <!-- NEW0999: MIPS integration   -->
+        <action path="/services/esire/open" forward="esire.open.redirect" />
+        <!-- END NEW0999: MIPS integration   -->
+
+        <!-- NEW0710 : Add external link for "Candidatures spontanées - EU CVONLINE"  -->
+        <action path="/services/cvonline" forward="cvonline.redirect" />
+        <!-- END NEW0710   -->
+
+
+		<!-- TBT -->
+        <action path="/services/consultApplications" forward="consult.applications.redirect" />
+        
+        
+        <!-- ABM - activities -->
+        <action path="/services/abm/viewabm"
+                type="eu.cec.admin.sysper2.web.services.abm.actions.ViewABMAction">
+            <forward name="success" path="complete.services.abm.view.activites" />
+        </action>
+
+        <action path="/services/abm/accessIRMS"
+                type="eu.cec.admin.sysper2.web.services.abm.actions.SignOnIRMSAction">
+            <forward name="success" path="complete.services.abm.view.activites" />
+        </action>
+
+        <!-- JobDescription PDF generation -->
+        <action
+                path="/services/pdf/jobdescription"
+                type="eu.cec.admin.sysper2.web.services.pdf.actions.CreateJDPDFAction">
+        </action>
+        <!-- R3.4.5 CHG1598: JHM-VAC - Link "print job description" and "print vacancy notice" in vacancies -->
+        <action
+                path="/services/pdf/jdWithoutJh"
+                type="eu.cec.admin.sysper2.web.services.pdf.actions.CreateJDWithoutJHPDFAction">
+        </action>
+        <!-- End CHG1598: JHM-VAC - Link "print job description" and "print vacancy notice" in vacancies -->
+        <action
+                path="/services/pdf/genericjobdescription"
+                type="eu.cec.admin.sysper2.web.services.pdf.actions.CreateGenericJDPDFAction">
+        </action>
+
+        <action
+                path="/services/pdf/genericfunctionlist"
+                type="eu.cec.admin.sysper2.web.services.pdf.actions.CreateGenericFunctionListPDFAction">
+        </action>
+        <action
+                path="/services/pdf/genericjobdescriptionlist"
+                type="eu.cec.admin.sysper2.web.services.pdf.actions.CreateGenericJobDescriptionListPDFAction">
+        </action>
+
+
+        <!-- JOB & JOB HOLDER -->
+        <action path="/job/edittransferjobsframe" forward="frame.job.transfer.edit" />
+        <!-- NEW0292 R3.0.3-->
+        <action path="/job/sortjobsframe" forward="frame.job.sort.jobs" />
+        <!-- END NEW0292 -->
+        <action path="/job/editjobframe" forward="frame.job.edit" />
+        <action path="/job/addjobframe" forward="frame.job.create" />
+        <action path="/common/editdatepopup" forward="/jsp/common/popup_date.jsp" />
+
+        <!-- CHG0613 R2.5.3 sterckx -->
+        <action path="/job/transferjobs_success_overview" forward="job.edit.forwarding.transfer_jobs" />
+        <action path="/job/transferjobs_success_detail" forward="job.edit.forwarding.transfer_jobs.detail" />
+        <!-- CHG0613 R2.5.3 sterckx -->
+        <action path="/job/transferjobs_success_inconsistencies" forward="job.edit.forwarding.transfer_jobs.inconsistencies" />
+
+        <!-- NEW0382: security clearance information in job properties (begin) -->
+        <action path="/job/viewSecurityClearanceOverview"
+                type="eu.cec.admin.sysper2.web.job.actions.ViewSecurityClearanceOverviewAction"
+                name="job_securityClearanceOverviewForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.view.security_clearance.overview" />
+        </action>
+        <!-- NEW0382: security clearance information in job properties (begin) -->
+
+        <action
+                path="/job/job"
+                type="eu.cec.admin.sysper2.web.job.actions.ViewJobAction"
+                name="job_contextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.view.job" />
+        </action>
+
+        <action
+                path="/job/jobdetail"
+                type="eu.cec.admin.sysper2.web.job.actions.ViewJobDetailAction">
+            <forward name="success" path="job.popup.job-detail" />
+        </action>
+
+        <!-- CHG1763 (begin) Keep history of job Sensitiveness -->
+        <action path="/job/jobsenshistory"
+                type="eu.cec.admin.sysper2.web.job.actions.JobSensitivityHistoryAction">
+            <forward name="success" path="job.popup.job-sensitivity-history" />
+        </action>
+        <!-- CHG1763 (end) Keep history of job Sensitiveness -->
+
+        <!-- CHG1763 (begin) Keep history of job Sensitiveness -->
+        <action path="/job/jobtransfers"
+                type="eu.cec.admin.sysper2.web.job.actions.JobTransfersAction">
+            <forward name="success" path="job.popup.job-transfers" />
+        </action>
+        <!-- CHG1763 (end) Keep history of job Sensitiveness -->
+
+        <!-- goemato: CHG0186: edit job properties: make validity dates editable (begin) -->
+        <action path="/job/savejob_succes" forward="job.edit.forwarding.save" />
+
+        <action path="/job/savejob"
+                type="eu.cec.admin.sysper2.web.job.actions.SaveJobAction"
+                name="editJobBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/job/savejob_succes.do" redirect="true" />
+            <forward name="appFailure" path="/job/editjob.do" />
+        </action>
+
+        <action path="/job/savejob_add_succes" forward="job.add.forwarding.save" />
+
+        <action path="/job/savejob_add"
+                type="eu.cec.admin.sysper2.web.job.actions.SaveJobAction"
+                name="editJobBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/job/savejob_add_succes.do" redirect="true" />
+            <forward name="appFailure" path="/job/addjob.do" />
+        </action>
+
+        <!-- NEW0240 R2.6 sterckr -->
+        <action path="/job/jobpreferences"
+                type="eu.cec.admin.sysper2.web.job.actions.JobPreferencesAction">
+            <forward name="success" path="job.view.job-preferences" />
+        </action>
+
+        <action path="/job/editjobpreferencesframe" forward="frame.job.edit.job.preferences" />
+
+        <action
+                path="/job/editjobpreferences"
+                type="eu.cec.admin.sysper2.web.job.actions.EditJobPreferencesAction"
+                name="editJobPreferencesBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.edit.job.preferences" />
+        </action>
+
+        <action
+                path="/job/savejobpreferences"
+                type="eu.cec.admin.sysper2.web.job.actions.SaveJobPreferencesAction"
+                name="editJobPreferencesBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/job/jobpreferences_success.do" redirect="true" />
+            <forward name="appFailure" path="/job/editjobpreferences.do" redirect="false" />
+        </action>
+        <action path="/job/jobpreferences_success" forward="job.edit.forwarding.save.job_preferences" />
+        <!-- END NEW0240 -->
+
+        <!-- goemato: CHG0186: edit job properties: make validity dates editable (end) -->
+
+        <action
+                path="/cdr/report/savepane/create"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="cdr.report.action_pane.create" />
+        </action>
+
+        <action
+                path="/cdr/report/manual/savepane/create"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="cdr.report.manual.action_pane.create_transcription" />
+        </action>
+
+        <!-- CHG0241 R1.4.x sterckr -->
+        <action
+                path="/common/savepane/save"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="common.action_pane.save" />
+        </action>
+
+        <action
+                path="/common/savepane/saveNoInfoText"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="common.action_pane.save_no_info_text" />
+        </action>
+
+        <!-- CHG0714: Indicate which fields are mandatory in CDR edit screens (begin) -->
+        <action
+                path="/cdr/savepane/saveReturn"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="cdr.action_pane.save__save_return__cancel" />
+        </action>
+        <!-- CHG0714: Indicate which fields are mandatory in CDR edit screens (end) -->
+
+        <!-- goemato: CHG0369: (Presentation) edit screen timeout solution (begin) -->
+        <action
+                path="/common/savepane/saveReturn"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="common.action_pane.save__save_return__cancel" />
+        </action>
+        <!-- goemato: CHG0369: (Presentation) edit screen timeout solution (end) -->
+
+        <!-- CHG2973 (begin) put autorefresh in frame for revision and appeal window -->
+        <action path="/common/autorefreshpane/autoRefresh" forward="common.action_pane.autofresh" />
+        <!-- CHG2973 (end) put autorefresh in frame for revision and appeal window -->
+
+        <action
+                path="/common/savepane/wizardNext"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="common.action_pane.previous__next__cancel" />
+        </action>
+
+        <action
+                path="/common/savepane/wizardSave"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="common.action_pane.previous__save__cancel" />
+        </action>
+
+        <action
+                path="/common/savepane/savetwobuttons"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="buttons.cdr.objectives.new.objective" />
+        </action>
+
+        <action
+                path="/common/savepane/search"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="common.action_pane.search" />
+        </action>
+        <!-- END CHG0241 -->
+
+        <action
+                path="/common/savepane/newSearch_done"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="common.action_pane.new_search__done" />
+        </action>
+
+        <action path="/services/administration/securitypolicy"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.SecurityPolicyAction"
+                name="securityPolicyForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.administration.security_policy" />
+            <forward name="appFailure" path="services.administration.security_policy" />
+        </action>
+
+        <action path="/services/administration/rightsAdministration"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.RightsAdministrationAction"
+                name="rightsAdministrationForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.administration.rights_administration" />
+            <forward name="appFailure" path="services.administration.rights_administration" />
+        </action>
+        
+        <action path="/services/administration/rightsAdministrationDeleteUseCase"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.RightsAdministrationDeleteUseCaseAction"
+                name="rightsAdministrationNewUseCaseForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/services/administration/rightsAdministration.do" redirect="true" />
+            <forward name="appFailure" path="/services/administration/rightsAdministration.do" redirect="true"  />
+        </action>
+                <action path="/services/administration/rightsAdministrationObsoleteUseCase"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.RightsAdministrationUseCaseObsoleteAction"
+                name="rightsAdministrationNewUseCaseForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/services/administration/rightsAdministrationViewUseCase.do" redirect="true" />
+            <forward name="appFailure" path="/services/administration/rightsAdministration.do" redirect="true"  />
+        </action>
+        <action path="/services/administration/rightsAdministrationApproveUseCase"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.RightsAdministrationApproveUseCaseAction"
+                name="rightsAdministrationNewUseCaseForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/services/administration/rightsAdministrationViewUseCase.do" redirect="true" />
+            <forward name="appFailure" path="/services/administration/rightsAdministration.do" redirect="true"  />
+        </action>
+
+        
+        <action path="/services/administration/rightsAdministrationSaveUseCase"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.RightsAdministrationSaveUseCaseAction"
+                name="rightsAdministrationNewUseCaseForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.administration.rights_administration" />
+            <forward name="appFailure" path="services.administration.rights_administration" />
+        </action>
+        
+        <action path="/services/administration/rightsAdministrationNewUseCase"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.RightsAdministrationNewUseCaseAction"
+                name="rightsAdministrationNewUseCaseForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.administration.rights_administration_new_use_case" />
+            <forward name="appFailure" path="services.administration.rights_administration_new_use_case" />
+        </action>
+        
+        <action path="/services/administration/rightsAdministrationViewUseCase"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.RightsAdministrationViewUseCaseAction"
+                name="rightsAdministrationNewUseCaseForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.administration.rights_administration_view_use_case" />
+            <forward name="appFailure" path="services.administration.rights_administration_view_use_case" />
+        </action>
+                        
+        <action path="/services/administration/rightsAdministrationGetUseCasesByRole"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.RightsAdministrationGetUseCasesByRoleAction"
+                name="rightsAdministrationGetUseCasesByRoleForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.administration.rights_administration_get_usecases.content" />
+            <forward name="appFailure" path="services.administration.rights_administration_get_usecases.content" />
+        </action>
+        <action path="/services/administration/searchForPerson"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.SearchPersonsAction"
+                name="searchPersonForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.administration.hijackUser"/>
+            <forward name="appFailure" path="services.administration.hijackUser"/>
+        </action>
+
+        <action path="/services/administration/hijackUser"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.HijackUserContextAction"
+                name="searchPersonForm"
+                scope="request"
+                validate="false">
+            <forward name="menu" path="/home/menu.do" redirect="true" />
+            <forward name="appFailure" path="/services/administration/searchForPerson.do" />
+        </action>
+
+       <action path="/services/administration/testSecurity"
+               type="eu.cec.admin.sysper2.web.services.administration.actions.TestSecurityAction"
+               name="testSecurityForm"
+               scope="request"
+               validate="false">
+           <forward name="success" path="services.administration.testSecurity"/>
+           <forward name="appFailure" path="services.administration.testSecurity"/>
+               </action>
+
+        <action path="/services/administration/testActors"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.TestActorsAction"
+                name="testSecurityForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.administration.testActors"/>
+                </action>
+        <action path="/services/administration/workflow"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.WorkflowAction"
+                name="securityPolicyForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.administration.workflow" />
+            <forward name="appFailure" path="services.administration.workflow" />
+        </action>
+
+        <action path="/services/administration/generateWorkflow"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.GenerateWorkflowAction" />
+
+		<action path="/services/administration/showWorkflowOnNewPage"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.ShowWorkflowActionOnNewPage"
+                name="securityPolicyForm"
+                scope="request"
+                validate="false">                 
+			<forward name="success" path="services.administration.showWorkflowOnNewPage"/>
+		</action>
+                
+        <action path="/services/administration/flushframe"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.ViewBootstrapArgumentsAction">
+            <forward name="success" path="cdr.administration.flush" />
+        </action>
+        
+        <!--  NEW0913: REF - creation/updating of bank holidays      -->
+        <action path="/services/administration/holidays/view"
+                type="eu.cec.admin.sysper2.web.services.administration.holidays.actions.ViewCityBankHolidaysAction"
+                name="bankHolidaysForm" scope="request" validate="false">
+            <!-- todo: put in tiles!!  -->
+            <forward name="success" path="services.administration.holidays.view_holidays" />
+        </action>
+
+
+        <action path="/services/administration/holidays/editFrame" forward="frame.services.administration.holidays.edit" />
+
+        <action path="/services/administration/holidays/edit"
+                type="eu.cec.admin.sysper2.web.services.administration.holidays.actions.EditCityBankHolidaysAction"
+                name="bankHolidaysForm" scope="request" validate="false">
+            <forward name="success" path="services.administration.holidays.edit" />
+        </action>
+
+        <action path="/services/administration/holidays/save"
+                type="eu.cec.admin.sysper2.web.services.administration.holidays.actions.SaveBankHolidaysAction"
+                name="bankHolidaysForm" scope="request" validate="false">
+            <forward name="success" path="/services/administration/holidays/save_success.do" redirect="true" />
+            <forward name="appFailure" path="/services/administration/holidays/edit.do" />
+        </action>
+
+
+        <action path="/services/administration/holidays/save_success" forward="edit_forwarder.services.administration.holidays" />
+
+        <!-- END NEW0913: REF - creation/updating of bank holidays      -->
+
+
+        <action path="/services/administration/async/viewRequests"
+                type="eu.cec.admin.sysper2.web.services.async.actions.ViewAsyncRequestsAction"
+                name="searchAsyncRequestsForm" scope="request" validate="false">
+            <forward name="success" path="services.administration.async.view_requests" />
+        </action>
+        <action path="/services/administration/async/viewRequestDetailPopup"
+                type="eu.cec.admin.sysper2.web.services.async.actions.ViewAsyncRequestDetailAction"
+                name="searchAsyncRequestsForm" scope="request" validate="false">
+            <forward name="success" path="services.administration.async.view_request.detail.popup" />
+        </action>
+
+        <!-- NEW0391: Add action (URL) to send pending messages (begin) -->
+        <action
+                path="/services/administration/sendPendingMails"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.SendPendingMailsAction">
+            <!--
+               this action tries to retrieve the /home/menu.do navigation item from the navigation item list.
+               If this item is present, the action will redirect to it using the related parameters, if it is not
+               present, null will be returned.
+               -->
+        </action>
+        <!-- NEW0391: Add action (URL) to send pending messages (end) -->
+
+        <!--NEW0392: Messaging framework-->
+        <action path="/services/administration/viewMessagingErrors"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.ViewMessageErrorsAction">
+            <forward name="success" path="services.administration.view_messaging_errors" />
+        </action>
+
+        <!--
+        var RETRY_SENDING_MESSAGES_FORM_ACTION_URL = '/services/administration/retrySendingMessages.do';
+        var REMOVE_MESSAGES_FORM_ACTION_URL = '/services/administration/removeMessageErrors.do';
+        var EDIT_MESSAGE_DESTINATION_FORM_ACTION_URL = '/administration/services/editMessageDestination.do';
+        -->
+        <action path="/services/administration/retrySendingMessages"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.RetrySendingMessagesAction"
+                name="services_messaging_retrySendingOrRemoveMessagesForm"
+                validate="false" scope="request">
+            <forward name="success" path="/services/administration/viewMessagingErrors.do" redirect="true" />
+        </action>
+
+
+        <action path="/services/administration/removeMessageErrors"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.removeMessageErrorsAction"
+                name="services_messaging_retrySendingOrRemoveMessagesForm"
+                validate="false" scope="request">
+            <forward name="success" path="/services/administration/viewMessagingErrors.do" redirect="true" />
+        </action>
+
+
+        <action path="/services/administration/editMessageDestination"
+                type="eu.cec.admin.sysper2.web.services.administration.actions.ModifyMessageDestinationAction"
+                name="services_messaging_modifyMessageDestinationForm"
+                validate="false" scope="request">
+            <forward name="success" path="/services/administration/viewMessagingErrors.do" redirect="true" />
+        </action>
+
+        <action path="/services/administration/editMessageDestinationPopup" forward="services.administration.change.message.destination.popup" />
+
+        <action path="/services/administration/viewMessageContentPopup" forward="services.administration.view.message_content.popup" />
+        <!--NEW0392: Messaging framework-->
+
+        <!-- goemato: CHG0207: use intermediate action to generate jis creation token (end) -->
+        <action
+                path="/job/addjobtoken"
+                type="eu.cec.admin.sysper2.web.job.actions.AddJobTokenAction">
+            <forward name="success" path="/job/addjobframe.do" redirect="true" />
+        </action>
+        <!-- goemato: CHG0207: use intermediate action to generate jis creation token (end) -->
+
+        <action
+                path="/job/addjob"
+                type="eu.cec.admin.sysper2.web.job.actions.EditJobAction"
+                name="editJobBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.add.job" />
+        </action>
+
+        <action
+                path="/job/editjob"
+                type="eu.cec.admin.sysper2.web.job.actions.EditJobAction"
+                name="editJobBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.edit.job" />
+        </action>
+        
+        <action
+                path="/job/deletejob"
+                type="eu.cec.admin.sysper2.web.job.actions.DeleteJobAction">
+            <forward name="success" path="/org/vieworganisationjobs.do" redirect="true" />
+        </action>
+        
+        <action path="/org/job/sjobctxs"
+                type="eu.cec.admin.sysper2.web.job.actions.SecondaryJobContextsDashboardAction"
+                name="secondary_jobcontexts_dashboard_form"
+                scope="request" validate="false">
+            <forward name="success" path="org.secondary-contexts"/>
+            <forward name="success-redirect" path="/org/job/sjobctxs.do" redirect="true"/>
+        </action>
+        
+
+        <action
+                path="/job/nojob"
+                name="JobAssignmentAnomaliesForm"
+                scope="request"
+                validate="false"
+                type="eu.cec.admin.sysper2.web.job.actions.ViewNonAffectedAction">
+            <forward name="success" path="job.view.no-job" />
+        </action>
+
+        <action
+                path="/job/incorrectjob"
+                name="JobAssignmentAnomaliesForm"
+                scope="request"
+                validate="false"
+                type="eu.cec.admin.sysper2.web.job.actions.ViewIncorrectlyAssignedAction">
+            <forward name="success" path="job.view.incorrect-job" />
+        </action>
+
+        <!-- R4.0.1 CHG1802:JOB- jobs in obsolete unit / add a consultation date field -->
+        <action path="/job/inconsistencies/viewAssignedInObsoleteUnit"
+                type="eu.cec.admin.sysper2.web.job.actions.ViewAssignedInObsoleteUnitAction"
+                name="JobAssignmentAnomaliesForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.inconsistencies.view.assigned_in_obsolete_unit" />
+        </action>
+        <!-- End CHG1802:JOB- jobs in obsolete unit / add a consultation date field -->
+
+        <action
+                path="/job/personhistory"
+                type="eu.cec.admin.sysper2.web.job.actions.ViewPersonHistoryPopupAction">
+            <forward name="success" path="job.popup.person_history" />
+        </action>
+
+        <action
+                path="/job/searchjob"
+                type="eu.cec.admin.sysper2.web.job.actions.SearchJobAction"
+                name="job_selectJobForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.popup.select_job" />
+        </action>
+
+        <!-- JOB HOLDER -->
+        <action path="/job/jobholder"
+                type="eu.cec.admin.sysper2.web.job.actions.JobHolderAction"
+                name="jobOccupationsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.view.job-holder" />
+        </action>
+
+        <action path="/job/selectperson" type="eu.cec.admin.sysper2.web.job.actions.SelectPersonAction"
+                name="selectJobholderForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.popup.select_person" />
+        </action>
+
+        <!-- edit job occupation history (begin) -->
+        <action path="/job/editjoboccupationhistory"
+                type="eu.cec.admin.sysper2.web.job.actions.EditJobOccupationHistoryAction"
+                name="jobOccupationsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.occupation_history.edit" />
+        </action>
+
+        <action path="/job/editjoboccupationhistoryframe" forward="frame.job.occupation_history.edit" />
+
+        <action path="/job/savejoboccupationhistory"
+                type="eu.cec.admin.sysper2.web.job.actions.SaveJobOccupationHistoryAction"
+                name="jobOccupationsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/job/savejoboccupationhistory_success.do" redirect="true" />
+            <forward name="appFailure" path="/job/editjoboccupationhistory.do" />
+        </action>
+
+        <action path="/job/savejoboccupationhistory_success" forward="edit_forwarder.job.occupation_history" />
+        <!-- edit job occupation history (end) -->
+
+        <!-- edit person occupation history (begin) -->
+        <action path="/job/editPersonOccupationHistory"
+                type="eu.cec.admin.sysper2.web.job.actions.EditPersonOccupationHistoryAction"
+                name="jobOccupationsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.person_occupation_history.edit" />
+        </action>
+
+        <action path="/job/editPersonOccupationHistoryFrame" forward="frame.job.person_occupation_history.edit" />
+
+        <action path="/job/savePersonOccupationHistory"
+                type="eu.cec.admin.sysper2.web.job.actions.SavePersonOccupationHistoryAction"
+                name="jobOccupationsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/job/saveJobOccupationHistory_success.do" redirect="true" />
+            <forward name="success-assignmentAnomalies" path="/job/saveJobOccupationHistory_success_assignmentAnomalies.do" redirect="true" />
+            <forward name="success-careerAnomalies" path="/job/saveJobOccupationHistory_success_careerAnomalies.do" redirect="true" />
+            <forward name="success-notAssiged" path="/job/saveJobOccupationHistory_success_notAssigned.do" redirect="true" />
+            <forward name="success-incorrectlyAssigned" path="/job/saveJobOccupationHistory_success_incorrectlyAssigned.do" redirect="true" />
+            <forward name="appFailure" path="/job/editPersonOccupationHistory.do" />
+        </action>
+
+        <action path="/job/saveJobOccupationHistory_success" forward="edit_forwarder.job.person_occupation_history" />
+        <action path="/job/saveJobOccupationHistory_success_assignmentAnomalies" forward="edit_forwarder.job.person_occupation_history.assignment_anomalies" />
+        <action path="/job/saveJobOccupationHistory_success_careerAnomalies" forward="edit_forwarder.job.person_occupation_history.career_anomalies" />
+        <action path="/job/saveJobOccupationHistory_success_incorrectlyAssigned" forward="edit_forwarder.job.person_occupation_history.incorrectly_assigned" />
+        <action path="/job/saveJobOccupationHistory_success_notAssigned" forward="edit_forwarder.job.person_occupation_history.not_assigned" />
+        <!-- edit person occupation history (end) -->
+
+        <action path="/job/careerAnomalies" name="JobAssignmentAnomaliesForm"
+                type="eu.cec.admin.sysper2.web.job.actions.ViewCareerAnomaliesAction"
+                scope="request" validate="false">
+            <forward name="success" path="job.inconsistencies.view.job_career_anomalies" />
+        </action>
+
+        <!-- END CHG0222 -->
+        <action
+                path="/job/edittransferJobs"
+                type="eu.cec.admin.sysper2.web.job.actions.EditTransferJobsAction"
+                name="transferJobsBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.edit.transfer.jobs" />
+        </action>
+
+        <action path="/job/sortJobs"
+                type="eu.cec.admin.sysper2.web.job.actions.SortJobsAction"
+                name="sortJobsBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.sort.jobs" />
+        </action>
+
+        <action
+                path="/job/savesortedjobs"
+                type="eu.cec.admin.sysper2.web.job.actions.SaveSortJobsAction"
+                name="sortJobsBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/job/sortjobs_success_detail.do" redirect="true" />
+            <forward name="appFailure" path="/job/sortJobs.do" />
+        </action>
+
+        <action path="/job/sortjobs_success_detail" forward="job.edit.forwarding.sort_jobs.detail" />
+
+        <!-- CHG0809 R3.1 sterckx -->
+        <action path="/job/makejobobsoleteframe" forward="frame.make.job_obsolete" />
+
+        <action
+                path="/job/makejobobsolete"
+                type="eu.cec.admin.sysper2.web.job.actions.EditJobStateAction"
+                name="modifyJobStateBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.make.job-obsolete" />
+        </action>
+        
+        <action
+                path="/job/countActiveJaps"
+                type="eu.cec.admin.sysper2.web.job.actions.CheckActiveJapsAction"
+                name="checkActiveJapsForm"
+                scope="request"
+                validate="false">
+        </action>
+
+        <action
+                path="/job/savemakejobobsolete"
+                type="eu.cec.admin.sysper2.web.job.actions.MakeJobsObsoleteAction"
+                name="makeJobsObsoleteBean"
+                scope="request"
+                validate="false">
+            <forward name="jobsOverview" path="/job/makejobobsolete_success_overview.do" redirect="true" />
+            <forward name="jobDetail" path="/job/makejobobsolete_success_detail.do" redirect="true" />
+            <forward name="appFailure" path="/job/makejobobsolete.do" />
+            <forward name="existApprovedJDFailure" path="/job/makejobobsolete.do" />
+        </action>
+
+        <action path="/job/makejobobsolete_success_overview" forward="job.make.job-obsolete.forwarding.overview" />
+        <action path="/job/makejobobsolete_success_detail" forward="job.make.job-obsolete.forwarding.detail" />
+        <!-- END CHG0809 -->
+
+        <!-- CHG0811 R3.1 sterckx -->
+        <action path="/job/makejobactiveframe" forward="frame.make.job_active" />
+
+        <action
+                path="/job/makejobactive"
+                type="eu.cec.admin.sysper2.web.job.actions.EditJobStateAction"
+                name="modifyJobStateBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.make.job-active" />
+        </action>
+
+        <action
+                path="/job/savemakejobactive"
+                type="eu.cec.admin.sysper2.web.job.actions.MakeJobsActiveAction"
+                name="modifyJobStateBean"
+                scope="request"
+                validate="false">
+            <forward name="jobsOverview" path="/job/makejobactive_success_overview.do" redirect="true" />
+            <forward name="jobDetail" path="/job/makejobactive_success_detail.do" redirect="true" />
+            <forward name="appFailure" path="/job/makejobactive.do" />
+        </action>
+
+        <action path="/job/makejobactive_success_overview" forward="job.make.job-active.forwarding.overview" />
+        <action path="/job/makejobactive_success_detail" forward="job.make.job-active.forwarding.detail" />
+        <!-- END CHG0811 -->
+
+        <action
+                path="/job/editmakejobsactive"
+                type="eu.cec.admin.sysper2.web.job.actions.EditJobStateAction"
+                name="modifyJobStateBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/job/editMakeJobsActive_v.jsp" />
+        </action>
+
+        <action
+                path="/job/makejobsactive"
+                type="eu.cec.admin.sysper2.web.job.actions.MakeJobsActiveAction"
+                name="modifyJobStateBean"
+                scope="request"
+                validate="false">
+            <forward name="jobsOverview" path="/org/vieworganisationjobs_re.do" redirect="true" />
+            <forward name="jobDetail" path="/job/job.do" redirect="true" />
+            <forward name="appFailure" path="/job/editmakejobsactive.do" />
+        </action>
+
+        <action
+                path="/job/transferjobs"
+                type="eu.cec.admin.sysper2.web.job.actions.TransferJobsAction"
+                name="transferJobsBean"
+                scope="request"
+                validate="false">
+            <!-- CHG0613 R2.5.3 sterckr -->
+            <forward name="jobsOverview" path="/job/transferjobs_success_overview.do" redirect="true" />
+            <!-- END CHG0613 -->
+            <forward name="jobDetail" path="/job/transferjobs_success_detail.do" redirect="true" />
+            <forward name="success-inconsistencies" path="/job/transferjobs_success_inconsistencies.do" redirect="true" />
+            <forward name="appFailure" path="/job/edittransferJobs.do" />
+        </action>
+
+        <!-- NEW0186 R2.2 sterckr -->
+        <!-- Reopen job -->
+        <action path="/job/reopenjob" type="eu.cec.admin.sysper2.web.job.actions.ReopenJobAction">
+            <forward name="success" path="/job/job.do" redirect="true" />
+        </action>
+        <!-- END NEW0186 -->
+
+
+        <!-- CONTACTING -->
+        <action
+                path="/services/ndp/contactForm"
+                type="eu.cec.admin.sysper2.web.services.contact.actions.ContactFormAction"
+                name="contactBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/services/ndp/contact_form.jsp" />
+        </action>
+
+        <action
+                path="/services/ndp/sendcontactform"
+                type="eu.cec.admin.sysper2.web.services.ndp.actions.SendNdpContactFormAction"
+                name="contactBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/services/contact/submittedcontactform.do" redirect="true" />
+        </action>
+
+
+        <action
+                path="/services/contact/contactform"
+                type="eu.cec.admin.sysper2.web.services.contact.actions.ContactFormAction"
+                name="contactBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/services/contact/contact_c.jsp" />
+        </action>
+
+        <action
+                path="/services/contact/sendcontactform"
+                type="eu.cec.admin.sysper2.web.services.contact.actions.SendContactFormAction"
+                name="contactBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/services/contact/submittedcontactform.do" redirect="true" />
+        </action>
+
+        <action
+                path="/services/contact/familyCompo"
+                type="eu.cec.admin.sysper2.web.services.contact.actions.ContactFormAction"
+                name="contactBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/services/contact/contact_famcompo.jsp" />
+        </action>
+
+        <action
+                path="/services/contact/sendFamilyCompo"
+                type="eu.cec.admin.sysper2.web.services.contact.actions.SendFamilyCompoAction"
+                name="contactBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/services/contact/famcompo-submitted.jsp" />
+        </action>
+
+        <!-- R2.6 NEW0246: career history tab should contain disclaimer + link to feedback form -->
+        <action
+                path="/services/contact/disclaimerform"
+                type="eu.cec.admin.sysper2.web.services.contact.actions.ContactFormAction"
+                name="contactBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/services/contact/disclaimer_form.jsp" />
+        </action>
+
+        <action
+                path="/services/contact/senddisclaimerform"
+                type="eu.cec.admin.sysper2.web.services.contact.actions.SendDisclaimerFormAction"
+                name="contactBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/services/contact/submittedcontactform.do" redirect="true" />
+        </action>
+        <!-- End NEW0246: career history tab should contain disclaimer + link to feedback form -->
+
+        <action
+                path="/services/contact/submittedcontactform"
+                type="eu.cec.admin.sysper2.web.services.contact.actions.SubmittedContactFormAction">
+            <forward name="success" path="/jsp/services/contact/contact-submitted_v.jsp" />
+        </action>
+
+        <!-- ORGANISATION  -->
+
+        <action path="/org/viewKeywords"
+                type="eu.cec.admin.sysper2.web.org.actions.ViewKeywordsAction"
+                name="org_keyword"
+                scope="request"
+                validate="false">
+            <forward name="success" path="org.view.keywords" />
+        </action>
+
+        <action path="/org/deleteKeyword"
+                type="eu.cec.admin.sysper2.web.org.actions.RemoveKeywordAction">
+            <forward name="success" path="/org/viewKeywords.do" redirect="true" />
+            <forward name="appFailure" path="/org/viewKeywords.do" />
+        </action>
+
+        <action path="/org/saveKeyword"
+                type="eu.cec.admin.sysper2.web.org.actions.SaveKeywordAction"
+                name="org_keyword"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/org/viewKeywords.do" redirect="true" />
+            <forward name="appFailure" path="/org/viewKeywords.do" />
+        </action>
+
+        <action path="/org/editUnitKeywords"
+                type="eu.cec.admin.sysper2.web.org.actions.EditUnitKeywordsAction"
+                name="org_unit_keywords"
+                scope="request"
+                validate="false">
+            <forward name="success" path="org.edit.unit_keywords" />
+        </action>
+
+        <action path="/org/saveUnitKeywords"
+                type="eu.cec.admin.sysper2.web.org.actions.SaveUnitKeywordsAction"
+                name="org_unit_keywords"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/org/saveUnitKeywords_success.do" redirect="true" />
+            <forward name="appFailure" path="/org/editUnitKeywords.do" />
+        </action>
+
+        <action path="/org/editUnitKeywordsFrame" forward="frame.org.edit.unit_keywords" />
+        <action path="/org/saveUnitKeywords_success" forward="edit_forwarder.org.edit.unit_keywords" />
+
+        <!--- R4.1 NEW0489: INFOTEL add keywords also to jobs -->
+        <action path="/job/editJobKeywords"
+                type="eu.cec.admin.sysper2.web.job.actions.EditJobKeywordsAction"
+                name="org_unit_keywords"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.edit.job_keywords" />
+        </action>
+
+        <action path="/job/saveJobKeywords"
+                type="eu.cec.admin.sysper2.web.job.actions.SaveJobKeywordsAction"
+                name="org_unit_keywords"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/job/saveJobKeywords_success.do" redirect="true" />
+            <forward name="appFailure" path="/job/editJobKeywords.do" />
+        </action>
+
+        <action path="/job/editJobKeywordsFrame" forward="frame.job.edit.job_keywords" />
+        <action path="/job/saveJobKeywords_success" forward="edit_forwarder.job.edit.job_keywords" />
+        <!-- End NEW0489: INFOTEL add keywords also to jobs -->
+
+        <action
+                path="/org/vieworganisationchart"
+                type="eu.cec.admin.sysper2.web.org.actions.ViewOrganisationChartAction"
+                name="organisationBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="complete.org.view.chart" />
+        </action>
+        
+        <action
+                path="/org/selectOrganisationUnit"
+                type="eu.cec.admin.sysper2.web.org.actions.SelectOrganisationUnitAction"
+                name="organisationBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/org/selectOrganisationUnit.jsp"/>
+        </action>
+
+        <!-- modify org unit properties -->
+        <action path="/org/editOrganisationProperties"
+                type="eu.cec.admin.sysper2.web.org.actions.EditOrganisationPropertiesAction"
+                name="org_UnitPropertiesForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="org.edit.properties" />
+        </action>
+
+        <action path="/org/saveOrganisationProperties"
+                type="eu.cec.admin.sysper2.web.org.actions.SaveOrganisationPropertiesAction"
+                name="org_UnitPropertiesForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/org/saveOrganisationProperties_success.do" redirect="true" />
+            <forward name="appFailure" path="/org/editOrganisationProperties.do" />
+        </action>
+
+        <action path="/org/editOrganisationPropertiesFrame" forward="frame.org.edit.properties" />
+        <action path="/org/saveOrganisationProperties_success" forward="edit_forwarder.org.edit.properties" />
+
+        <!-- CHG0273b: [presentation] organisation jobs & chart page (begin) -->
+        <!--
+        the action checks the path, if it is equal to this one,
+        the jobs tab should use /org/vieworganisationjobs_jd as path
+        -->
+    <action
+	    path="/org/vieworganisationchart_jd"
+	    type="eu.cec.admin.sysper2.web.org.actions.ViewOrganisationChartAction"
+		name="organisationBean"
+		scope="request"
+		validate="false">
+            <forward name="success" path="complete.org.view.chart"/>
+    </action>
+
+    <action
+	    path="/org/vieworganisationchart_ar"
+	    type="eu.cec.admin.sysper2.web.org.actions.ViewOrganisationChartAction"
+		name="organisationBean"
+		scope="request"
+		validate="false">
+            <forward name="success" path="complete.org.view.chart"/>
+    </action>
+
+    <action
+	    path="/org/vieworganisationchart_re"
+	    type="eu.cec.admin.sysper2.web.org.actions.ViewOrganisationChartAction"
+		name="organisationBean"
+		scope="request"
+		validate="false">
+            <forward name="success" path="complete.org.view.chart"/>
+    </action>
+    <!-- CHG0273b: [presentation] organisation jobs & chart page (end) -->
+
+    <action
+	    path="/org/vieworganisationproperties"
+	    type="eu.cec.admin.sysper2.web.org.actions.ViewOrganisationPropertiesAction"
+		name="organisationBean"
+		scope="request"
+		validate="false">
+            <forward name="success" path="complete.org.view.properties"/>
+    </action>
+
+	<!--
+		/org/vieworganisationjobs action maping must be an exact copy of:
+	-->
+	<action
+	    path="/org/vieworganisationjobs"
+	    type="eu.cec.admin.sysper2.web.org.actions.ViewOrganisationJobManagementAction"
+		name="organisationBean"
+		scope="request"
+		validate="false">
+            <forward name="success" path="complete.org.view.jobs"/>
+            <forward name="success_xls" path="/services/tableToExcel.do"/>
+    </action>
+
+	<action
+	    path="/org/vieworganisationjobs_jd"
+	    type="eu.cec.admin.sysper2.web.org.actions.ViewOrganisationJobManagementAction"
+		name="organisationBean"
+		scope="request"
+		validate="false"
+		parameter="JOBDESCRIPTIONS">
+        <forward name="success" path="complete.org.view.jobs"/>
+        <forward name="success_xls" path="/services/tableToExcel.do"/>
+
+    </action>
+
+    <action
+	    path="/org/vieworganisationjobs_ecv"
+	    type="eu.cec.admin.sysper2.web.org.actions.ViewOrganisationJobManagementAction"
+		name="organisationBean"
+		scope="request"
+		validate="false"
+		parameter="ECV">
+            <forward name="success" path="complete.org.view.jobs"/>
+    </action>
+
+	<action
+		path="/org/vieworganisationjobs_vac"
+		type="eu.cec.admin.sysper2.web.org.actions.ViewOrganisationJobManagementAction"
+		name="organisationBean"
+		scope="request"
+		validate="false"
+		parameter="vacancies">
+		<forward name="success" path="complete.org.view.jobs"/>
+	</action>
+
+	<action
+	    path="/org/vieworganisationjobs_ar"
+	    type="eu.cec.admin.sysper2.web.org.actions.ViewOrganisationJobManagementAction"
+		name="organisationBean"
+		scope="request"
+		validate="false"
+		parameter="ACCESSRIGHTS">
+            <forward name="success" path="complete.org.view.jobs"/>
+    </action>
+
+	<action
+	    path="/org/vieworganisationjobs_re"
+	    type="eu.cec.admin.sysper2.web.org.actions.ViewOrganisationJobManagementAction"
+		name="organisationBean"
+		scope="request"
+		validate="false"
+		parameter="REORGANISATION">
+            <forward name="success" path="complete.org.view.jobs"/>
+    </action>
+
+	<action
+		path="/org/xls/viewOrganisationJobs"
+		type="eu.cec.admin.sysper2.web.org.actions.CreateXlsViewOrganisationJobs"
+		scope="request"
+		validate="false"
+		name="organisationBean">
+	</action>
+
+    <action path="/org/vieworganisationjobs_actors"
+	    type="eu.cec.admin.sysper2.web.org.actions.ViewOrganisationActorsJobsAction"
+            name="org_ActorNavigationForm"
+            scope="request"
+            validate="false">
+            <forward name="success" path="complete.org.view.actors.jobs"/>
+        <forward name="success_xls" path="/services/tableToExcel.do"/>
+        
+    </action>
+
+    <action
+	    path="/org/vieworganisationjobs_objectives"
+	    type="eu.cec.admin.sysper2.web.org.actions.ViewOrganisationJobManagementAction"
+		name="organisationBean"
+		scope="request"
+		validate="false"
+		parameter="CDR_OBJECTIVES">
+            <forward name="success" path="complete.org.view.jobs"/>
+    </action>
+    
+    <action path="/org/job/editSecondaryJobContextFrame" forward="frame.org.job.edit.sjc" />
+    
+    <action path="/org/job/editSecondaryJobContext"
+            type="eu.cec.admin.sysper2.web.job.actions.EditSecondaryJobContextAction"
+			name="secondaryJobContextForm"
+        	scope="request"
+        	validate="false">
+        <forward name="success" path="org.job.edit.sjc" redirect="true"/>
+        <forward name="failed" path="org.job.edit.sjc"/>
+    </action>
+    
+    <action path="/org/job/endSecondaryJobContextFrame" forward="frame.org.job.end.sjc"  />
+    
+    <action path="/org/job/endSecondaryJobContext" name="secondaryJobContextForm" scope="request" forward="org.job.end.sjc" />
+    
+    <action path="/org/job/saveEndSecondaryJobContext"
+            type="eu.cec.admin.sysper2.web.job.actions.EndSecondaryJobContextAction"
+            name="secondaryJobContextForm" 
+            scope="request" 
+            validate="false">
+		<forward name="success" path="/org/job/saveSecondaryJobContext_success.do" redirect="true" />
+		<forward name="appFailure" path="/org/job/endSecondaryJobContext.do" />
+	</action>
+	
+    <action path="/org/job/saveSecondaryJobContext"
+            type="eu.cec.admin.sysper2.web.job.actions.SaveSecondaryJobContextAction"
+            name="secondaryJobContextForm" 
+            scope="request" 
+            validate="false">
+		<forward name="success" path="/org/job/saveSecondaryJobContext_success.do" redirect="true" />
+		<forward name="partialSuccess" path="/org/job/saveSecondaryJobContext_partialSuccess.do" redirect="true" />
+		<forward name="appFailure" path="/org/job/editSecondaryJobContext.do" />
+	</action>
+
+	<action path="/org/job/saveSecondaryJobContext_success" 
+	        forward="edit_forwarder.org.job.sjc" />
+    
+    <action path="/org/job/saveSecondaryJobContext_partialSuccess" 
+	        forward="edit_forwarder_partialSuccess.org.job.sjc" />
+	        
+    <action path="/org/job/secondaryJobContextTransaction"
+            type="eu.cec.admin.sysper2.web.job.actions.SecondaryJobContextTransactionAction"
+            name="secondaryJobContextForm"
+        	scope="request"
+        	validate="false">
+		<forward name="success" path="/org/vieworganisationjobs_re.do" redirect="true"/>
+    </action>
+    
+    <action path="/org/job/secondaryJobContextWorkflowPopup"
+	        type="eu.cec.admin.sysper2.web.job.actions.ViewSecondaryJobContextWorkflowAction">
+        <forward name="success" path="sjc.popup.wfl" />
+	</action>
+        
+    <action
+	    path="/cdr/manage/viewJobs"
+	    type="eu.cec.admin.sysper2.web.cdr.manage.actions.ViewOrganisationCdrJobsAction"
+		name="organisationBean"
+		scope="request"
+		validate="false"
+		parameter="manageReports">
+            <forward name="success" path="cdr.manage.jobs.view"/>
+    </action>
+
+    <action
+	    path="/cdr/manage/viewObjectivesJobs"
+	    type="eu.cec.admin.sysper2.web.cdr.manage.actions.ViewOrganisationCdrJobsAction"
+		name="organisationBean"
+		scope="request"
+		validate="false"
+		parameter="manageObjectives">
+            <forward name="success" path="cdr.manage.jobs.view"/>
+    </action>
+
+    <action path="/cdr/manage/editCdrCreation"
+	    type="eu.cec.admin.sysper2.web.cdr.manage.actions.EditCdrCreationAction"
+            name="cdrManageJobsForm"
+            scope="request"
+            validate="false">
+            <forward name="success" path="cdr.manage.creation.edit"/>
+            <forward name="success_manual" path="cdr.manage.creation.manual.edit"/>
+    </action>
+
+	<!-- CHG2402: close report -->
+    <action path="/cdr/report/closeReport_popup" forward="cdr.report.popup.close_report_motivation"/>
+	<!-- NEW0383: skip reconduction_jh step  (begin) -->
+	<action path="/cdr/report/skipReconduction_popup" forward="cdr.report.popup.skip_reconduction_motivation"/>
+	<!-- NEW0383: skip reconduction_jh step  (end) -->
+    <action path="/cdr/report/skipSelfAssessment_popup" forward="cdr.report.popup.skip_motivation"/>
+    <!-- R2.2.4 CHG0452 (Presentation): Add button for RRH to skip Assessment JH and Revision JH -->
+    <action path="/cdr/report/skipAssessment_popup" forward="cdr.report.popup.skip_assessment_motivation"/>
+    <action path="/cdr/report/skipRevision_popup" forward="cdr.report.popup.skip_revision_motivation"/>
+    <!-- End CHG0452 (Presentation): Add button for RRH to skip Assessment JH and Revision JH -->
+    <action path="/cdr/manage/editCdrCreationFrame" forward="frame.cdr.manage.edit_cdr_creation"/>
+    <action path="/cdr/manage/editManualCdrCreationFrame" forward="frame.cdr.manage.edit_manual_cdr_creation"/>
+
+    <action path="/cdr/manage/createCdr"
+	    type="eu.cec.admin.sysper2.web.cdr.manage.actions.CreateCdrAction"
+		name="cdrManageJobsForm"
+		scope="request"
+		validate="false">
+            <forward name="appFailure" path="/cdr/manage/editCdrCreation.do"/>
+            <forward name="success" path="/cdr/manage/createCdr_success.do" redirect="true"/>
+            <forward name="success_manual" path="/cdr/manage/createManualCdr_success.do" redirect="true"/>
+    </action>
+
+    <action path="/cdr/manage/createCdr_success" forward="cdr.create.edit.forwarding"/>
+    <action path="/cdr/manage/createManualCdr_success" forward="cdr.manual.create.edit.forwarding"/>
+
+    <action path="/org/selectscope"
+	    type="eu.cec.admin.sysper2.web.org.actions.SelectScopeAction"
+		name="org_SelectScopeForm"
+		scope="request"
+		validate="false">
+            <forward name="success" path="/jsp/org/selectScope.jsp"/>
+    </action>
+
+    <action path="/cdr/report/modifyappraisalperiod_popup" forward="cdr.manage.modify.appraisal.period.popup"/>
+
+    <action path="/cdr/report/modifyappraisalperiod"
+            type="eu.cec.admin.sysper2.web.cdr.report.actions.ModifyAppraisalPeriodAction"
+            name="cdrModifyAppraisalPeriodForm"
+            scope="request"
+            validate="false">
+        <forward name="success" path="/cdr/report/properties/viewProcedure.do" redirect="true"/>
+        <forward name="appFailure" path="/cdr/report/properties/viewProcedure.do"/>
+    </action>
+
+    <action path="/cdr/report/deleteReport"
+            type="eu.cec.admin.sysper2.web.cdr.report.actions.DeleteReportAction"
+            name="cdrModifyAppraisalPeriodForm"
+            scope="request"
+            validate="false">
+        <forward name="success" path="/cdr/overview/cdr_details/viewcdrdetails.do" redirect="true"/>
+        <forward name="appFailure" path="/cdr/report/properties/viewProcedure.do"/>
+    </action>
+    <!-- REORGANISATION -->
+
+    <!-- R2.6 NEW0244: on CDR context tab: show log of non-workflow actions -->
+    <action path="/cdr/report/removelastphase_popup" forward="cdr.report.popup.remove_last_step_motivation"/>
+    <!-- End NEW0244: on CDR context tab: show log of non-workflow actions -->
+
+	 <!-- NEW0642 - add comments on Cdr (begin)-->
+      <action path="/cdr/report/properties/resetCdrComment"
+        type="eu.cec.admin.sysper2.web.cdr.report.properties.actions.ResetCdrCommentAction"
+        name="cdrStepsForm" scope="request" validate="false">
+          <forward name="success" path="/cdr/report/properties/viewProcedure.do" redirect="true" />
+      </action>
+
+	 <action path="/cdr/report/properties/viewCommentPopup" forward="cdr.report.properties.view.comment.popup"/>
+	 <action path="/cdr/report/properties/modifyCdrCommentFrame" forward="frame.cdr.report.properties.edit.cdr.comment"/>
+	 <action path="/cdr/report/properties/modifyCdrComment"
+		 type="eu.cec.admin.sysper2.web.cdr.report.properties.actions.EditCdrCommentAction"
+		 name="cdrStepsForm"
+		 scope="request"
+		 validate="false">
+		 <forward name="success" path="cdr.report.properties.edit.cdr.comment"/>
+	 </action>
+
+	 <action path="/cdr/report/properties/modifyCdrComment_success" forward="cdr.report.properties.modify.comment.forwarding"/>
+	 <action path="/cdr/report/properties/saveCdrComment"
+		 type="eu.cec.admin.sysper2.web.cdr.report.properties.actions.SaveCdrCommentAction"
+		 name="cdrStepsForm" scope="request" validate="false">
+		 <forward name="edit-comments" path="/cdr/report/properties/modifyCdrComment.do" redirect="true"/>
+		 <forward name="success-comments" path="/cdr/report/properties/modifyCdrComment_success.do" redirect="true"/>
+	 </action>
+
+	 <action
+		 path="/cdr/report/properties/actionpane/modifyCdrComment"
+		 type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+		 <forward name="success" path="cdr.report.properties.action_pane.cdr.comment"/>
+	 </action>
+    <!-- NEW0642 - add comments on Cdr (end)-->
+
+    <!-- R2.3.3 CHG0498 [Presentation]: button to modify probation period dates at all times -->
+    <action path="/cdr/report/modifyprobationperiod_popup" forward="cdr.manage.modify.probation.period.popup"/>
+
+    <action path="/cdr/report/modifyprobationperiod"
+            type="eu.cec.admin.sysper2.web.cdr.report.actions.ModifyProbationPeriodAction"
+            name="cdrModifyAppraisalPeriodForm"
+            scope="request"
+            validate="false">
+        <forward name="success" path="/cdr/report/properties/viewProcedure.do" redirect="true"/>
+        <forward name="appFailure" path="/cdr/report/properties/viewProcedure.do"/>
+    </action>
+    <!-- End CHG0498 [Presentation]: button to modify probation period dates at all times -->
+
+    <!-- R2.3 CHG0473 [Presentation]: Add button for SYSADMIN to remove last state and signature of previous one -->
+    <action path="/cdr/report/removelastphase"
+            type="eu.cec.admin.sysper2.web.cdr.report.actions.RemoveLastStepAction"
+            name="cdr_report_motivationForm"
+            scope="request"
+            validate="false">
+        <forward name="success" path="/cdr/report/properties/viewProcedure.do" redirect="true"/>
+        <forward name="appFailure" path="/cdr/report/properties/viewProcedure.do"/>
+
+	    <forward name="failure-reconduction" path="/cdr/report/reconduction/viewReconduction.do"/>
+
+	    <forward name="failure-self_assessment-objectives" path="/cdr/report/self_assessment/viewObjectivesDevelopment.do"/>
+	    <forward name="failure-self_assessment-contributions" path="/cdr/report/self_assessment/viewContributions.do"/>
+
+	    <forward name="failure-assessment-efficiency" path="/cdr/report/assessment/viewEfficiency.do"/>
+	    <forward name="failure-assessment-abilities" path="/cdr/report/assessment/viewAbilities.do"/>
+	    <forward name="failure-assessment-conduct" path="/cdr/report/assessment/viewConductAspects.do"/>
+	    <forward name="failure-assessment-overall_summary" path="/cdr/report/assessment/viewOverallSummary.do"/>
+	    <forward name="failure-assessment-potential" path="/cdr/report/assessment/viewPotential.do"/>
+	    <forward name="failure-assessment-additional_duties" path="/cdr/report/assessment/viewAdditionalDuties.do"/>
+	    <forward name="failure-assessment-jec_conclusions" path="/cdr/report/assessment/viewJecConclusions.do"/>
+	    <forward name="failure-assessment-probation_period" path="/cdr/report/assessment/viewProbationPeriod.do"/>
+	    <forward name="failure-assessment-final_approval" path="/cdr/report/assessment/viewFinalApproval.do"/>
+
+	    <forward name="failure-manual-transcription" path="/cdr/report/manual/viewTranscription.do"/>
+    </action>
+    <!-- End CHG0473 [Presentation]: Add button for SYSADMIN to remove last state and signature of previous one -->
+
+    <!-- ACCESS RIGHTS -->
+
+    <!-- ACCESS RIGHTS -->
+		<action path="/security/rolesrights"
+			type="eu.cec.admin.sysper2.web.security.actions.AccessRightsAction"
+			name="accessRightsForm"
+			scope="request"
+			validate="false">
+			<forward name="success" path="security.view.access-rights"/>
+		</action>
+		
+		<action path="/security/getAccessRightInfo"
+		        type="eu.cec.admin.sysper2.web.security.actions.ViewAccessRightInfoAction">
+		        <forward name="success" path="sec.popup.getinfo" />
+		</action>
+
+		<action path="/security/getUseCaseInfo"
+		        type="eu.cec.admin.sysper2.web.security.actions.ViewUseCaseInfoAction">
+		        <forward name="success" path="sec.popup.getinfo" />
+		</action>
+		      
+        
+		<action path="/security/selectperson" type="eu.cec.admin.sysper2.web.security.actions.SelectPersonAction"
+			name="selectPersonForm"
+			scope="request"
+			validate="false">
+			<forward name="success" path="sec.popup.select_person"/>
+		</action>
+
+		<action path="/security/delegatedrights"
+			type="eu.cec.admin.sysper2.web.security.actions.GivenDelegationsAction"
+			name="receivedDelegationsForm"
+			scope="request"
+			validate="false">
+			<forward name="success" path="security.view.delegated-rights"/>
+            <forward name="successDelegateToOtherJob" path="frame.sec.permission.delegateJob"/>
+		</action>
+
+		<action path="/security/delegatedUsecases"
+			type="eu.cec.admin.sysper2.web.security.actions.DelegatedUseCasesAction"
+			name="useCasesForm"
+			scope="request"
+			validate="false">
+			<forward name="success" path="security.view.delegatedusecases"/>
+			<forward name="noUsecases" path="/security/delegatedrights.do" redirect="true"/>
+		</action>
+
+        <action path="/security/accessRightDetailJSON" type="eu.cec.admin.sysper2.web.security.actions.AccessRightDetailJSONAction" />
+    
+    <!-- Use cases -->
+		<action path="/security/usecases"
+			type="eu.cec.admin.sysper2.web.security.actions.UseCasesAction"
+			name="useCasesForm"
+			scope="request"
+			validate="false">
+			<forward name="success" path="security.view.usecases"/>
+			<forward name="noUsecases" path="/security/rolesrights.do"/>
+		</action>
+		<action path="/security/getUseCaseInfo"
+		        type="eu.cec.admin.sysper2.web.security.actions.ViewUseCaseInfoAction">
+		        <forward name="success" path="sec.popup.getusecaseinfo" />
+		</action>	
+<!-- Add Role transaction (begin) -->
+<action path="/security/editRoleFrame" forward="frame.sec.role.add"/>
+<action path="/security/addRole_success" forward="edit_forwarder.sec.role.add"/>
+
+<action path="/security/editRole"
+    type="eu.cec.admin.sysper2.web.security.actions.EditRoleAction"
+    name="editRoleForm"
+    scope="request"
+    validate="false">
+    <forward name="success" path="sec.role.add"/>
+</action>
+
+<action path="/security/addRole"
+    type="eu.cec.admin.sysper2.web.security.actions.AddRoleAction"
+    name="editRoleForm"
+    scope="request"
+    validate="false">
+    <forward name="success" path="/security/addRole_success.do" redirect="true"/>
+    <forward name="appFailure" path="/security/editRole.do"/>
+</action>
+<!-- Add Role transaction (end) -->
+<!-- Update obsolete usecases begin -->
+<action path="/security/updateObsoleteUsecases"
+    type="eu.cec.admin.sysper2.web.security.actions.UpdateObsoleteUsecasesAction"
+    name="accessRightsForm"
+    scope="request"
+    validate="false">
+    <forward name="success" path="/security/delegatedUsecases.do"  redirect="true"/>
+</action>
+
+<!-- Update obsolete usecases end -->
+
+
+<!-- delegate USecases (begin) -->
+<action path="/security/delegateUseCasesFrame" forward="frame.sec.usecases.delegate"/>
+
+<action path="/security/delegateUseCases"
+    type="eu.cec.admin.sysper2.web.security.actions.DelegateUsecasesAction"
+    name="accessRightsForm"
+    scope="request"
+    validate="false">
+    <forward name="success" path="sec.usecases.delegate"/>
+</action>
+<action path="/security/saveDelegatedUsecases"
+    type="eu.cec.admin.sysper2.web.security.actions.SaveDelegateUsecasesAction"
+    name="accessRightsForm"
+    scope="request"
+    validate="false">
+    <forward name="success" path="/security/delegateUsecases_success.do" redirect="true"/>
+    <forward name="webFailure" path="/security/delegateUseCases.do"/>
+    <forward name="appFailure" path="/security/delegateUseCases.do"/>
+</action>
+<action path="/security/delegateUsecases_success" forward="edit_forwarder.sec.usecases.delegate"/>
+<!-- delegate USecases (end) -->
+
+<!-- delegate Permissions (begin) -->
+<action path="/security/delegatePermissionsFrame" forward="frame.sec.permission.delegate"/>
+<action path="/security/delegatePermissions_success" forward="edit_forwarder.sec.permission.delegate"/>
+<action path="/security/delegatePermissionsToOtherJob_success" forward="edit_forwarder.sec.permission.delegateToOtherJob"/>
+
+<action path="/security/delegatePermissions"
+    type="eu.cec.admin.sysper2.web.security.actions.DelegatePermissionsAction"
+    name="accessRightsForm"
+    scope="request"
+    validate="false">
+    <forward name="success" path="sec.permission.delegate"/>
+</action>
+
+<action path="/security/delegatePermissionsToOtherJob"
+        type="eu.cec.admin.sysper2.web.security.actions.DelegatePermissionsToOtherJobAction"
+        name="receivedDelegationsForm"
+        scope="request"
+        validate="false">
+    <forward name="success" path="sec.permission.delegateToOtherJob"/>
+</action>
+
+<action path="/security/saveDelegatedPermissions"
+    type="eu.cec.admin.sysper2.web.security.actions.SaveDelegatePermissionsAction"
+    name="accessRightsForm"
+    scope="request"
+    validate="false">
+    <forward name="success" path="/security/delegatePermissions_success.do" redirect="true"/>
+    <forward name="webFailure" path="/security/delegatePermissions.do"/>
+    <forward name="appFailure" path="/security/delegatePermissions.do"/>
+</action>
+
+<action path="/security/saveDelegatedPermissionsToOtherJob"
+    type="eu.cec.admin.sysper2.web.security.actions.SaveDelegatePermissionsToOtherJobAction"
+    name="accessRightsForm"
+    scope="request"
+    validate="false">
+    <forward name="success" path="/security/delegatePermissionsToOtherJob_success.do" redirect="true"/>
+    <forward name="webFailure" path="/security/delegatePermissions.do"/>
+    <forward name="appFailure" path="/security/delegatePermissions.do"/>
+</action>
+
+<!-- delegate Permissions (end) -->
+
+<!-- edit Delegations (begin) -->
+<action path="/security/editDelegationsFrame" forward="frame.sec.delegations.edit"/>
+<action path="/security/editDelegations_success" forward="edit_forwarder.sec.delegations.edit"/>
+
+<action path="/security/editUsecasesFrame" forward="frame.sec.usecases.edit"/>
+<action path="/security/editUsecases_success" forward="edit_forwarder.sec.usecases.edit"/>
+
+<action path="/security/editDelegations"
+    type="eu.cec.admin.sysper2.web.security.actions.EditDelegationsAction"
+    name="receivedDelegationsForm"
+    scope="request"
+    validate="false">
+    <forward name="success" path="sec.delegations.edit"/>
+</action>
+
+<action path="/security/editUsecases"
+    type="eu.cec.admin.sysper2.web.security.actions.EditUsecasesAction"
+    name="receivedUsecasesForm"
+    scope="request"
+    validate="false">
+    <forward name="success" path="sec.usecases.edit"/>
+</action>
+
+<action path="/security/saveDelegations"
+    type="eu.cec.admin.sysper2.web.security.actions.SaveDelegationsAction"
+    name="receivedDelegationsForm"
+    scope="request"
+    validate="false">
+    <forward name="success" path="/security/editDelegations_success.do" redirect="true"/>
+    <forward name="appFailure" path="/security/editDelegations.do"/>
+</action>
+
+<action path="/security/saveUsecases"
+    type="eu.cec.admin.sysper2.web.security.actions.SaveUsecasesAction"
+    name="saveUseCasesForm"
+    scope="request"
+    validate="false">
+    <forward name="success" path="/security/editUsecases_success.do" redirect="true"/>
+    <forward name="appFailure" path="/security/editUsecases.do"/>
+</action>
+<!-- edit Delegations (end) -->
+
+
+		<action path="/security/revokerole"
+			type="eu.cec.admin.sysper2.web.security.actions.RevokeRoleAction"
+                name="editRoleForm"
+                scope="request"
+                validate="true">
+			<forward name="success" path="/security/rolesrights.do" redirect="true"/>
+		</action>
+
+		<action path="/security/receiveddelegations"
+				type="eu.cec.admin.sysper2.web.security.actions.ReceivedDelegationsAction"
+				name="receivedDelegationsForm"
+				scope="request"
+				validate="false">
+				<forward name="success" path="security.view.received-delegations" />
+		</action>
+		
+		<action path="/security/receivedUsecases"
+				type="eu.cec.admin.sysper2.web.security.actions.ReceivedUseCasesAction"
+				name="useCasesForm"
+				scope="request"
+				validate="false">
+				<forward name="success" path="security.view.received-usecases" />
+				<forward name="noUsecases" path="/security/receiveddelegations.do" redirect="true"/>
+		</action>
+
+
+		<action path="/security/revokedelegations"
+			type="eu.cec.admin.sysper2.web.security.actions.RevokeDelegationsAction"
+			name="receivedDelegationsForm"
+			scope="request"
+			validate="false">
+			<forward name="success" path="/security/delegatedrights.do" redirect="true"/>
+		</action>
+
+        <action path="/security/confirmDelegations"
+                type="eu.cec.admin.sysper2.web.security.actions.ConfirmDelegationsAction"
+                name="receivedDelegationsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/security/delegatedrights.do" redirect="true" />
+            <forward name="appFailure" path="/security/delegatedrights.do" />
+        </action>
+
+        <!-- Person(s) -->
+        <!-- R4.2 CHG2009: PER - Add "Per Id" as search criteria in "Search Person" page -->
+        <action path="/per/searchpersonforcreation"
+                type="eu.cec.admin.sysper2.web.per.search.actions.SearchForPersonAction"
+                name="searchPersonForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="per.search.person" />
+        </action>
+        <!-- End CHG2009: PER - Add "Per Id" as search criteria in "Search Person" page -->
+
+        <action path="/per/searchperson"
+                type="eu.cec.admin.sysper2.web.per.search.actions.SearchForPersonAction"
+                name="searchPersonForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="per.search.person" />
+        </action>
+
+        <action path="/org/searchperson"
+                type="eu.cec.admin.sysper2.web.per.search.actions.SearchForPersonAction"
+                name="searchPersonForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="per.search.person" />
+        </action>
+
+        <action path="/ndp/searchperson"
+                type="eu.cec.admin.sysper2.web.per.search.actions.SearchForPersonAction"
+                name="searchPersonForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="per.search.person" />
+        </action>
+
+        <action path="/tim/searchperson"
+                type="eu.cec.admin.sysper2.web.per.search.actions.SearchForPersonAction"
+                name="searchPersonForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="per.search.person" />
+        </action>
+
+        <action path="/tim/ats/searchperson"
+                type="eu.cec.admin.sysper2.web.per.search.actions.SearchForPersonAction"
+                name="searchPersonForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="per.search.person" />
+        </action>
+
+        <action path="/per/searchpersonlanguages"
+                type="eu.cec.admin.sysper2.web.per.search.actions.SearchForPersonAction"
+                name="searchPersonForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="per.search.person" />
+        </action>
+
+        <!-- R2.3.3 CHG0500 [Presentation]: Add page with overview of a persons job assignments in Sysper2 -->
+        <action path="/per/personjobassignments"
+                type="eu.cec.admin.sysper2.web.per.actions.PersonJobAssignmentsAction"
+                name="per_ActChangeForm">
+            <forward name="success" path="per.view.person.job-assignments" />
+        </action>
+        <!-- End CHG0500 [Presentation]: Add page with overview of a persons job assignments in Sysper2 -->
+
+        <action path="/per/sensitiveAssignments"
+                type="eu.cec.admin.sysper2.web.per.actions.PersonSensitiveAssignmentsAction"
+                name="per_ActChangeForm">
+            <forward name="success" path="per.view.person.sensitive-assignments" />
+        </action>
+
+        <!--<action path="/per/personcareerhistory"-->
+                <!--type="eu.cec.admin.sysper2.web.car.actions.PersonCareerHistoryAction">-->
+            <!--<forward name="success" path="car.person.view.career.statutory" />-->
+        <!--</action>-->
+
+        <!-- scope limited to DG -->
+        <!--<action path="/job/selectscope" type="eu.cec.admin.sysper2.web.job.actions.SelectScopeAction">-->
+            <!--<forward name="success" path="/jsp/job/select_scope.jsp" />-->
+            <!--<forward name="nopopup" path="/jsp/job/select_scope.jsp" />-->
+        <!--</action>-->
+
+        <!-- CDR -->
+        <action path="/services/pdf/cdr/report/createPDF"
+                type="eu.cec.admin.sysper2.web.services.pdf.actions.CreateCDRPDFAction">
+        </action>
+
+        <action path="/services/pdf/cdr/report/objectivesPDF"
+                type="eu.cec.admin.sysper2.web.services.pdf.actions.CreateObjectivesPDFAction">
+        </action>
+
+        <action path="/services/xls/cdr/statistics/rostats"
+                type="eu.cec.admin.sysper2.web.services.pdf.actions.CreateWorkAsRoXLSAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+        </action>
+
+        <action path="/services/xls/cdr/statistics/costats"
+                type="eu.cec.admin.sysper2.web.services.pdf.actions.CreateWorkAsCoXLSAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+        </action>
+
+        <action path="/services/xls/cdr/actors/viewJobs"
+                type="eu.cec.admin.sysper2.web.services.pdf.actions.CreateActorsForJobsXLSAction"
+                name="org_ActorNavigationForm"
+                scope="request"
+                validate="false">
+        </action>
+
+        <!-- view manual report -->
+        <action path="/cdr/report/manual/viewTranscription"
+                type="eu.cec.admin.sysper2.web.cdr.report.manual.actions.ViewTranscriptionAction"
+                name="cdrModifyAppraisalPeriodForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.view.manual.transcription" />
+        </action>
+
+        <action path="/cdr/report/manual/editTranscription"
+                type="eu.cec.admin.sysper2.web.cdr.report.manual.actions.EditTranscriptionAction"
+                name="cdrFormBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.edit.manual.transcription" />
+        </action>
+
+        <action path="/cdr/report/manual/editTranscriptionFrame" forward="frame.cdr.report.manual.edit.transcription" />
+
+        <!-- R3.0 NEW0245: allow addition of attachments to a CDR report -->
+        <action path="/cdr/report/attachments/viewAttachments"
+                type="eu.cec.admin.sysper2.web.cdr.report.attachments.actions.ViewAttachmentsAction">
+            <forward name="success" path="cdr.report.view.attachments.attachments" />
+        </action>
+
+        <action path="/cdr/report/attachments/viewAttachment"
+                type="eu.cec.admin.sysper2.web.cdr.report.attachments.actions.ViewAttachmentAction">
+        </action>
+
+        <action path="/cdr/report/attachments/removeAttachment"
+                type="eu.cec.admin.sysper2.web.cdr.report.attachments.actions.RemoveAttachmentAction">
+            <forward name="success" path="/cdr/report/attachments/viewAttachments.do" redirect="true" />
+            <forward name="appFailure" path="/cdr/report/attachments/viewAttachments.do" />
+        </action>
+
+        <action path="/cdr/report/attachments/saveAttachment"
+                type="eu.cec.admin.sysper2.web.cdr.report.attachments.actions.SaveAttachmentAction"
+                name="cdrAttachmentForm"
+                scope="request"
+                validate="false">
+            <forward name="appFailure" path="cdr.report.add.attachments.attachment" />
+            <forward name="success" path="/cdr/report/attachments/saveAttachment_success.do" redirect="true" />
+            <forward name="success-return" path="/cdr/report/attachments/addAttachment.do" redirect="true" />
+        </action>
+
+        <action path="/cdr/report/attachments/saveAttachment_success" forward="cdr.report.attachments.attachment.edit_forwarding" />
+
+        <action path="/cdr/report/attachments/addAttachment"
+                type="eu.cec.admin.sysper2.web.cdr.report.attachments.actions.AddAttachmentAction"
+                name="cdrAttachmentForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.add.attachments.attachment" />
+        </action>
+
+        <action path="/cdr/report/attachments/addAttachmentFrame" forward="frame.cdr.report.add.attachments.attachment" />
+
+        <action
+                path="/cdr/report/attachments/savepane/addAttachment"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="cdr.report.attachments.action_pane.add_attachment" />
+        </action>
+        <!-- End NEW0245: allow addition of attachments to a CDR report -->
+        
+        <action path="/services/attachments/saveAttachment"
+                type="eu.cec.admin.sysper2.web.services.attachments.actions.SaveAttachmentAction"
+                name="attachmentForm"
+                scope="request"
+                validate="false">            
+            <forward name="success" path="/services/attachments/saveAttachment_success.do" redirect="true" />
+            <forward name="success-return" path="/services/attachments/addAttachment.do" redirect="true" />
+            <forward name="success-return-enc-eli" path="/services/attachments/save_success_enc_eli.do" redirect="true" />
+            <forward name="success-return-enc-prs" path="/services/attachments/save_success_enc_prs.do" redirect="true" />
+            <forward name="success-return-enc-cca" path="/services/attachments/save_success_enc_cca.do" redirect="true" />
+            <forward name="success-return-enc-selection" path="/services/attachments/save_success_enc_selection.do" redirect="true" />
+            <forward name="appFailure" path="services.attachments.add.attachment" />
+        </action>
+
+        <action path="/services/attachments/save_success_enc_cca" forward="edit_forwarder.enc.cca.view.documents" />
+        <action path="/services/attachments/save_success_enc_eli" forward="edit_forwarder.enc.eli.view.documents" />
+        <action path="/services/attachments/save_success_enc_prs" forward="edit_forwarder.enc.prs.view.documents" />
+        <action path="/services/attachments/save_success_enc_selection" forward="edit_forwarder.enc.selection.view.documents" />        
+        <!-- edit reject jh-assessment motivation -->
+        <action path="/cdr/report/editRejectAssessmentMotivation"
+                type="eu.cec.admin.sysper2.web.cdr.report.actions.EditRejectionMotivationAction"
+                parameter="assessment"
+                name="cdr_report_motivationForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.edit.reject_assessment.motivation" />
+        </action>
+
+        <action path="/cdr/report/editRejectAssessmentMotivationFrame" forward="frame.cdr.report.edit.reject_assessment.motivation" />
+        <action path="/cdr/report/rejectAssessment_success" forward="edit_forwarder.cdr.report.edit.reject_assessment" />
+
+        <action
+                path="/cdr/report/actionpane/rejectAssessmentMotivation"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="cdr.report.action_pane.reject_assessment.motivation" />
+        </action>
+
+        <!-- edit reject jh-assessment motivation -->
+        <action path="/cdr/report/editRejectRevisionMotivation"
+                type="eu.cec.admin.sysper2.web.cdr.report.actions.EditRejectionMotivationAction"
+                parameter="revision"
+                name="cdr_report_motivationForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.edit.reject_revision.motivation" />
+        </action>
+
+        <action path="/cdr/report/editRejectRevisionMotivationFrame" forward="frame.cdr.report.edit.reject_revision.motivation" />
+        <action path="/cdr/report/rejectRevision_success" forward="edit_forwarder.cdr.report.edit.reject_revision" />
+
+        <action
+                path="/cdr/report/actionpane/rejectRevisionMotivation"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="cdr.report.action_pane.reject_revision.motivation" />
+        </action>
+
+        <!-- view self-assessment -->
+        <action path="/cdr/report/self_assessment/viewObjectivesDevelopment"
+                type="eu.cec.admin.sysper2.web.cdr.report.self_assessment.actions.ViewObjectivesAction">
+            <forward name="success" path="cdr.report.view.self_assessment.objectives.development" />
+            <forward name="success_skipped" path="cdr.report.view.self_assessment.skipped" />
+        </action>
+
+        <action path="/cdr/report/self_assessment/viewContributions"
+                type="eu.cec.admin.sysper2.web.cdr.report.self_assessment.actions.ViewContributionsAction">
+            <forward name="success" path="cdr.report.view.self_assessment.contributions" />
+            <forward name="success_skipped" path="cdr.report.view.self_assessment.skipped" />
+        </action>
+
+        <!-- view assessment -->
+        <action path="/cdr/report/assessment/viewEfficiency"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.ViewEfficiencyAction">
+            <forward name="success" path="cdr.report.view.assessment.efficiency" />
+            <forward name="modify" path="/cdr/report/assessment/editAssessmentFrame.do" />
+        </action>
+
+        <action path="/cdr/report/assessment/viewAbilities"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.ViewAbilitiesAction">
+            <forward name="success" path="cdr.report.view.assessment.abilities" />
+            <forward name="modify" path="/cdr/report/assessment/editAssessmentFrame.do" />
+        </action>
+
+        <action path="/cdr/report/assessment/viewConductAspects"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.ViewConductAction">
+            <forward name="success" path="cdr.report.view.assessment.conduct" />
+            <forward name="modify" path="/cdr/report/assessment/editAssessmentFrame.do" />
+        </action>
+
+        <action path="/cdr/report/assessment/viewOverallSummary"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.ViewOverallSummaryAction">
+            <forward name="success" path="cdr.report.view.assessment.overall_summary" />
+            <forward name="modify" path="/cdr/report/assessment/editOverallSummaryFrame.do" />
+        </action>
+
+        <action path="/cdr/report/assessment/viewPotential"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.ViewPotentialAction">
+            <forward name="success" path="cdr.report.view.assessment.potential" />
+            <forward name="modify" path="/cdr/report/assessment/editPotentialFrame.do" />
+        </action>
+
+        <action path="/cdr/report/assessment/viewAdditionalDuties"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.ViewAdditionalDutiesAction">
+            <forward name="success" path="cdr.report.view.assessment.additional_duties" />
+            <forward name="modify" path="/cdr/report/assessment/editAdditionalDutiesFrame.do" />
+        </action>
+
+        <action path="/cdr/report/assessment/viewJecConclusions"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.ViewJecConclusionsAction">
+            <forward name="success" path="cdr.report.view.assessment.jec_conclusions" />
+            <forward name="modify" path="/cdr/report/assessment/editJecConclusionsFrame.do" />
+        </action>
+
+        <action path="/cdr/report/assessment/viewProbationPeriod"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.ViewProbationPeriodAction">
+            <forward name="success" path="cdr.report.view.assessment.probation" />
+            <forward name="modify" path="/cdr/report/assessment/editProbationPeriodFrame.do" />
+        </action>
+
+        <action path="/cdr/report/assessment/viewFinalApproval"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.ViewFinalApprovalAction">
+            <forward name="success" path="cdr.report.view.assessment.final_approval" />
+            <forward name="modify" path="/cdr/report/assessment/editFinalApprovalFrame.do" />
+        </action>
+
+        <!-- report reconduction -->
+        <action path="/cdr/report/reconduction/viewReconduction"
+                type="eu.cec.admin.sysper2.web.cdr.report.reconduction.actions.ViewReconductionAction">
+            <forward name="success" path="cdr.report.view.reconduction" />
+        </action>
+
+        <action path="/cdr/report/reconduction/editReconduction"
+                type="eu.cec.admin.sysper2.web.cdr.report.reconduction.actions.EditReconductionAction"
+                name="cdrFormBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.edit.reconduction" />
+        </action>
+
+        <action path="/cdr/report/reconduction/editReconductionFrame" forward="frame.cdr.report.edit.reconduction" />
+        <action path="/cdr/report/reconduction/saveReconduction_success" forward="cdr.report.edit.reconduction.forwarding" />
+
+        <!-- report reconduction jobholder's comments -->
+        <action path="/cdr/report/reconduction/modifyReconductionComment"
+                type="eu.cec.admin.sysper2.web.cdr.report.reconduction.actions.EditReconductionCommentAction"
+                name="cdr_report_motivationForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.edit.reconduction.motivation" />
+        </action>
+
+        <action path="/cdr/report/reconduction/modifyReconductionCommentFrame" forward="frame.cdr.report.edit.reconduction.motivation" />
+        <action path="/cdr/report/reconduction/modifyReconductionComment_success" forward="cdr.report.modify.reconduction.comment.forwarding" />
+
+        <action path="/cdr/report/reconduction/saveReconductionComment"
+                type="eu.cec.admin.sysper2.web.cdr.report.reconduction.actions.SaveReconductionCommentAction"
+                name="cdr_report_motivationForm" scope="request" validate="false">
+            <forward name="edit-reconduction" path="/cdr/report/reconduction/modifyReconductionComment.do" redirect="true" />
+            <forward name="success-reconduction" path="/cdr/report/reconduction/modifyReconductionComment_success.do" redirect="true" />
+            <forward name="failure-reconduction" path="/cdr/report/reconduction/modifyReconductionComment.do" />
+        </action>
+
+        <action
+                path="/cdr/report/reconduction/actionpane/modifyReconductionComment"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="cdr.report.action_pane.reconduction.motivation" />
+        </action>
+
+        <!-- view points summary -->
+        <action path="/cdr/report/summary/viewPoints"
+                type="eu.cec.admin.sysper2.web.cdr.report.summary.actions.ViewPointsSummaryAction">
+            <forward name="success" path="cdr.report.view.summary.points" />
+        </action>
+
+        <!-- report properties -->
+        <action path="/cdr/report/properties/viewProcedure"
+                type="eu.cec.admin.sysper2.web.cdr.report.properties.actions.ViewProcedureAction"
+                name="cdrModifyAppraisalPeriodForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.view.properties.procedure" />
+        </action>
+
+        <action path="/cdr/report/properties/viewjobobjectives"
+                type="eu.cec.admin.sysper2.web.cdr.report.properties.actions.ViewJobOrientedObjectivesAction">
+            <forward name="success" path="cdr.report.view.properties.objectives.job" />
+        </action>
+
+        <action path="/cdr/report/properties/viewpersonalobjectives"
+                type="eu.cec.admin.sysper2.web.cdr.report.properties.actions.ViewPersonalObjectivesAction">
+            <forward name="success" path="cdr.report.view.properties.objectives.personal" />
+        </action>
+
+        <action path="/cdr/report/properties/viewTraining"
+                type="eu.cec.admin.sysper2.web.cdr.report.properties.actions.ViewTrainingAction">
+            <forward name="success" path="cdr.report.view.properties.training" />
+        </action>
+
+        <action path="/cdr/report/properties/viewAccessLog"
+                type="eu.cec.admin.sysper2.web.cdr.report.properties.actions.ViewAccessLogAction">
+            <forward name="success" path="cdr.report.view.properties.access_log" />
+        </action>
+
+        <!-- cdr assessment frame forwards -->
+        <action path="/cdr/report/self_assessment/editObjectivesDevelopmentFrame" forward="frame.cdr.report.self_assessment.edit.objectives_develpment" />
+        <action path="/cdr/report/self_assessment/editContributionsFrame" forward="frame.cdr.report.self_assessment.edit.contributions" />
+
+        <!-- cdr assessment frame forwards -->
+        <action path="/cdr/report/assessment/editAssessmentFrame" forward="frame.cdr.report.assessment.edit" />
+        <action path="/cdr/report/assessment/editOverallSummaryFrame" forward="frame.cdr.report.assessment.edit.overall_summary" />
+        <action path="/cdr/report/assessment/editPotentialFrame" forward="frame.cdr.report.assessment.edit.potential" />
+        <action path="/cdr/report/assessment/editAdditionalDutiesFrame" forward="frame.cdr.report.assessment.edit.additional_duties" />
+        <action path="/cdr/report/assessment/editJecConclusionsFrame" forward="frame.cdr.report.assessment.edit.jec_conclusions" />
+        <action path="/cdr/report/assessment/editProbationPeriodFrame" forward="frame.cdr.report.assessment.edit.probation" />
+
+        <!-- cdr self_assessment edit -->
+        <action path="/cdr/report/self_assessment/editObjectivesDevelopment"
+                type="eu.cec.admin.sysper2.web.cdr.report.self_assessment.actions.EditObjectivesAction"
+                name="cdrFormBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.edit.self_assessment.objectives_development" />
+        </action>
+
+        <action path="/cdr/report/self_assessment/editContributions"
+                type="eu.cec.admin.sysper2.web.cdr.report.self_assessment.actions.EditContributionsAction"
+                name="cdrFormBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.edit.self_assessment.contributions" />
+        </action>
+
+        <!-- cdr assessment edit -->
+        <action path="/cdr/report/assessment/editAssessment"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.EditEfficiencyAbilitiesConductAction"
+                name="cdrFormBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.edit.assessment" />
+        </action>
+
+        <action path="/cdr/report/assessment/editOverallSummary"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.EditOverallSummaryAction"
+                name="cdrFormBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.edit.assessment.overall_summary" />
+        </action>
+
+        <action path="/cdr/report/assessment/editPotential"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.EditPotentialAction"
+                name="cdrFormBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.edit.assessment.potential" />
+        </action>
+
+        <action path="/cdr/report/assessment/potential/selectFunction"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.SelectPotentialFunctionPopupAction"
+                name="cdrFormBean" scope="request" validate="false">
+            <forward name="success" path="cdr.report.edit.assessment.potential.functions.popup" />
+        </action>
+
+        <action path="/cdr/report/assessment/editAdditionalDuties"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.EditAdditionalDutiesAction"
+                name="cdrFormBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.edit.assessment.additional_duties" />
+        </action>
+
+        <action path="/cdr/report/assessment/editJecConclusions"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.EditJecConclusionsAction"
+                name="cdrFormBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.edit.assessment.jec_conclusions" />
+        </action>
+
+        <action path="/cdr/report/assessment/editProbationPeriod"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.EditProbationAction"
+                name="cdrFormBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.edit.assessment.probation" />
+        </action>
+
+        <action path="/cdr/report/assessment/editFinalApproval"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.EditFinalApprovalAction"
+                name="cdrFormBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.edit.assessment.final_approval" />
+        </action>
+
+
+        <!-- save report action -->
+        <action path="/cdr/report/saveReport"
+                type="eu.cec.admin.sysper2.web.cdr.report.actions.SaveReportAction"
+                name="cdrFormBean"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/cdr/report/self_assessment/saveObjectives_success.do" />
+            <!-- default -->
+
+            <forward name="success-reconduction" path="/cdr/report/reconduction/saveReconduction_success.do" />
+
+            <forward name="success-self_assessment-objectives" path="/cdr/report/self_assessment/saveObjectives_success.do" />
+            <forward name="success-self_assessment-contributions" path="/cdr/report/self_assessment/saveContributions_success.do" />
+
+            <forward name="success-assessment" path="/cdr/report/assessment/saveAssessment_success.do" />
+            <forward name="success-assessment-overall_summary" path="/cdr/report/assessment/saveOverallSummary_success.do" />
+            <forward name="success-assessment-potential" path="/cdr/report/assessment/savePotential_success.do" />
+            <forward name="success-assessment-additional_duties" path="/cdr/report/assessment/saveAdditionalDuties_success.do" />
+            <forward name="success-assessment-jec_conclusions" path="/cdr/report/assessment/saveJecConclusions_success.do" />
+            <forward name="success-assessment-probation_period" path="/cdr/report/assessment/saveProbationPeriod_success.do" />
+            <forward name="success-assessment-final_approval" path="/cdr/report/assessment/saveFinalApproval_success.do" />
+
+            <forward name="success-manual-transcription" path="/cdr/report/manual/saveTranscription_success.do" />
+
+            <forward name="reconduct-assessment-efficiency" path="/cdr/report/assessment/editEfficiency.do" />
+            <forward name="reconduct-assessment-abilities" path="/cdr/report/assessment/editAbilities.do" />
+            <forward name="reconduct-assessment-conduct" path="/cdr/report/assessment/editConduct.do" />
+            <forward name="reconduct-assessment-overall_summary" path="/cdr/report/assessment/editOverallSummary.do" />
+            <forward name="reconduct-assessment-potential" path="/cdr/report/assessment/editPotential.do" />
+            <forward name="reconduct-assessment-additional_duties" path="/cdr/report/assessment/editAdditionalDuties.do" />
+            <!-- goemato: CHG0369: (Presentation) edit screen timeout solution (begin) -->
+            <forward name="reconduct-probation-assessment" path="/cdr/report/assessment/editProbationPeriod.do" />
+
+            <forward name="edit-reconduction" path="/cdr/report/reconduction/editReconduction.do" />
+            <forward name="failure-reconduction" path="/cdr/report/reconduction/editReconduction.do" />
+
+            <forward name="edit-self_assessment-objectives" path="/cdr/report/self_assessment/editObjectivesDevelopment.do" />
+            <forward name="edit-self_assessment-contributions" path="/cdr/report/self_assessment/editContributions.do" />
+
+            <forward name="edit-assessment" path="/cdr/report/assessment/editAssessment.do" />
+            <forward name="edit-assessment-overall_summary" path="/cdr/report/assessment/editOverallSummary.do" />
+            <forward name="edit-assessment-potential" path="/cdr/report/assessment/editPotential.do" />
+            <forward name="edit-assessment-additional_duties" path="/cdr/report/assessment/editAdditionalDuties.do" />
+            <forward name="edit-assessment-jec_conclusions" path="/cdr/report/assessment/editJecConclusions.do" />
+            <forward name="edit-assessment-probation_period" path="/cdr/report/assessment/editProbationPeriod.do" />
+            <forward name="edit-assessment-final_approval" path="/cdr/report/assessment/editFinalApproval.do" />
+
+            <!-- goemato: CHG0369: (Presentation) edit screen timeout solution (end) -->
+
+            <forward name="edit-manual-transcription" path="/cdr/report/manual/editTranscription.do" />
+
+        </action>
+
+        <action path="/cdr/report/closeReport"
+                type="eu.cec.admin.sysper2.web.cdr.report.actions.CloseReportAction"
+                name="cdrModifyAppraisalPeriodForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/cdr/report/properties/viewProcedure.do" redirect="true" />
+            <forward name="appFailure" path="/cdr/report/properties/viewProcedure.do" />
+        </action>
+
+
+        <action path="/cdr/report/skipStep"
+                type="eu.cec.admin.sysper2.web.cdr.report.actions.SkipStepAction"
+                name="cdrModifyAppraisalPeriodForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/cdr/report/properties/viewProcedure.do" redirect="true" />
+            <forward name="appFailure" path="/cdr/report/properties/viewProcedure.do" />
+        </action>
+
+        <!-- sign report action -->
+        <action path="/cdr/report/rejectReport"
+                type="eu.cec.admin.sysper2.web.cdr.report.actions.RejectReportAction"
+                name="cdr_report_motivationForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/cdr/report/properties/viewProcedure.do" redirect="true" />
+            <forward name="success-assessment" path="/cdr/report/rejectAssessment_success.do" redirect="true" />
+            <forward name="success-revision" path="/cdr/report/rejectRevision_success.do" redirect="true" />
+
+            <forward name="failure" path="/cdr/report/properties/viewProcedure.do" />
+            <forward name="failure-assessment" path="/cdr/report/editRejectAssessmentMotivation.do" />
+            <forward name="failure-revision" path="/cdr/report/editRejectRevisionMotivation.do" />
+        </action>
+
+        <action path="/cdr/report/approveReport"
+                type="eu.cec.admin.sysper2.web.cdr.report.actions.ApproveReportAction">
+            <forward name="success" path="/cdr/report/properties/viewProcedure.do" />
+            <forward name="success-manual-transcription" path="/cdr/report/properties/viewProcedure.do" />
+
+            <forward name="failure-reconduction" path="/cdr/report/reconduction/viewReconduction.do" />
+
+            <forward name="failure-self_assessment-objectives" path="/cdr/report/self_assessment/viewObjectivesDevelopment.do" />
+            <forward name="failure-self_assessment-contributions" path="/cdr/report/self_assessment/viewContributions.do" />
+
+            <forward name="failure-assessment-efficiency" path="/cdr/report/assessment/viewEfficiency.do" />
+            <forward name="failure-assessment-abilities" path="/cdr/report/assessment/viewAbilities.do" />
+            <forward name="failure-assessment-conduct" path="/cdr/report/assessment/viewConductAspects.do" />
+            <forward name="failure-assessment-overall_summary" path="/cdr/report/assessment/viewOverallSummary.do" />
+            <forward name="failure-assessment-potential" path="/cdr/report/assessment/viewPotential.do" />
+            <forward name="failure-assessment-additional_duties" path="/cdr/report/assessment/viewAdditionalDuties.do" />
+            <forward name="failure-assessment-jec_conclusions" path="/cdr/report/assessment/viewJecConclusions.do" />
+            <forward name="failure-assessment-probation_period" path="/cdr/report/assessment/viewProbationPeriod.do" />
+            <forward name="failure-assessment-final_approval" path="/cdr/report/assessment/viewFinalApproval.do" />
+
+            <forward name="failure-manual-transcription" path="/cdr/report/manual/viewTranscription.do" />
+        </action>
+
+        <action path="/cdr/report/self_assessment/saveObjectives_success" forward="cdr.report.self_assessment.objectives.edit.forwarding" />
+        <action path="/cdr/report/self_assessment/saveContributions_success" forward="cdr.report.self_assessment.contributions.edit.forwarding" />
+
+        <action path="/cdr/report/assessment/saveAssessment_success" forward="cdr.report.assessment.edit.forwarding" />
+        <action path="/cdr/report/assessment/saveOverallSummary_success" forward="cdr.report.assessment.overall_summary.edit.forwarding" />
+        <action path="/cdr/report/assessment/savePotential_success" forward="cdr.report.assessment.potential.edit.forwarding" />
+        <action path="/cdr/report/assessment/saveAdditionalDuties_success" forward="cdr.report.assessment.additional_duties.edit.forwarding" />
+        <action path="/cdr/report/assessment/saveJecConclusions_success" forward="cdr.report.assessment.jec_conclusions.edit.forwarding" />
+        <action path="/cdr/report/assessment/saveProbationPeriod_success" forward="cdr.report.assessment.probation_period.edit.forwarding" />
+        <action path="/cdr/report/assessment/saveFinalApproval_success" forward="cdr.report.assessment.final_approval.edit.forwarding" />
+
+        <action path="/cdr/report/manual/saveTranscription_success" forward="cdr.report.manual.transcription.edit.forwarding" />
+
+        <action path="/cdr/report/revision/view_motivation_popup" forward="cdr.report.revision.motivation.view.popup" />
+        <action path="/cdr/report/appeal/view_motivation_popup" forward="cdr.report.appeal.motivation.view.popup" />
+
+        <!-- R2.6 NEW0244: on CDR context tab: show log of non-workflow actions -->
+        <action path="/cdr/report/properties/viewprocedure/nonworkflowmotivation_popup" forward="cdr.non.workflow.motivation.view.popup" />
+        <!-- End NEW0244: on CDR context tab: show log of non-workflow actions -->
+
+        <!--	reuse CDR from other person	 -->
+        <action path="/cdr/report/reusecdrfromother"
+                type="eu.cec.admin.sysper2.web.cdr.report.actions.ReuseCdrFromOtherPersonAction"
+                name="reuseCdrForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.reuse.cdr.from_other_person.popup" />
+        </action>
+
+        <!--	reuse CDR from other CDR of the jobholder him-/herself	 -->
+        <action path="/cdr/report/reusecdrfromjobholder"
+                type="eu.cec.admin.sysper2.web.cdr.report.actions.ReuseCdrFromJobholderAction"
+                name="reuseCdrForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.report.reuse.cdr.from_jobholder.popup" />
+        </action>
+
+        <!-- CDR STATISTICS -->
+        <action path="/cdr/statistics/entitystats"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.EntityStatsAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.entitystats" />
+        </action>
+        <action path="/cdr/statistics/levelstats"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.LevelStatsAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.levelstats" />
+        </action>
+
+        <action path="/cdr/statistics/actorstats"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.FollowUpByActorAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.followup_by_actor" />
+        </action>
+
+        <action path="/cdr/statistics/delaystats"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.DelayStatsAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.delaystats" />
+        </action>
+
+        <action path="/cdr/statistics/jecoverview"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.JECDelayStatsAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.delaystats" />
+        </action>
+
+        <action path="/cdr/statistics/aaoverview"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.AADelayStatsAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.delaystats" />
+        </action>
+
+        <action path="/cdr/statistics/jrcoverview"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.JRCDelayStatsAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.delaystats" />
+        </action>
+
+        <action path="/cdr/statistics/advancestats"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.AdvanceStatsAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.advancestats" />
+        </action>
+        <action path="/cdr/statistics/jobholderstats"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.JobHolderStatsAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.jobholderstats" />
+        </action>
+
+        <!-- R2.5 NEW0218 [Presentation]: detail pages of progress by entity -->
+        <action path="/cdr/statistics/jobholdercdrstatestats"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.JobHolderCDRStateStatsAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.jobholderstats" />
+        </action>
+        <!-- End NEW0218 [Presentation]: detail pages of progress by entity -->
+
+        <!-- R2.6 NEW0260: objective progress by entity: add detail pages -->
+        <action path="/cdr/statistics/objectivesjobholderstats"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.ObjectivesJobHolderStatsAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.objectivesjobholderstats" />
+        </action>
+        <!-- End NEW0260: objective progress by entity: add detail pages -->
+
+        <!-- R2.5 NEW0219 [Presentation]: flag job occupation status as not requiring a CDR -->
+        <action path="/cdr/statistics/disablecdrcreation"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.DisableCDRCreationAction"
+                name="manageCDRCreationForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/cdr/statistics/jobholdercdrstatestats.do" redirect="true" />
+            <forward name="appFailure" path="/cdr/statistics/jobholdercdrstatestats.do" />
+        </action>
+        <!-- End NEW0219 [Presentation]: flag job occupation status as not requiring a CDR -->
+
+        <action path="/cdr/statistics/disablecdrscreation"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.DisableCDRSCreationAction"
+                name="manageCDRCreationForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/cdr/statistics/doubleslistworkrostats.do" redirect="true" />
+            <forward name="appFailure" path="/cdr/statistics/doubleslistworkrostats.do" />
+        </action>
+
+        <action path="/cdr/statistics/editCdrsCommentPopup" forward="cdr.statistics.cdrs_disabled.motivation.edit.popup" />
+
+        <!-- R2.5 NEW0220 [Presentation]: new page with statistics on objectives -->
+        <action path="/cdr/statistics/objectivescdrstats"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.ObjectivesStatsAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.objectivesstats" />
+        </action>
+        <!-- End NEW0220 [Presentation]: new page with statistics on objectives -->
+
+        <!-- Reports of stage -->
+        <action path="/cdr/statistics/stages/stagereports"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.stages.actions.StageReportsAction"
+                name="searchStageStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.stages.stagereports" />
+        </action>
+
+        <!-- Probation Period Reports for the AHCC-->
+        <action path="/cdr/statistics/stages/ahccstagereports"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.stages.actions.AHCCStageReportsAction"
+                name="searchStageStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.stages.stagereports" />
+        </action>
+
+        <!-- R2.5 CHG0521 [Presentation]: Assign probation period report to a specific person for treatment -->
+        <action path="/cdr/statistics/stages/managestagereports"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.stages.actions.ManageStagesReportsAction"
+                name="manageProbationReportForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/cdr/statistics/stages/stagereports.do" redirect="true" />
+            <forward name="appFailure" path="/cdr/statistics/stages/stagereports.do" />
+        </action>
+        <!-- End CHG0521 [Presentation]: Assign probation period report to a specific person for treatment -->
+
+        <!-- NEW0648 - Rapports de stage pour agents contractuels (begin) -->
+        <action path="/cdr/statistics/stages/ahccmanagestagereports"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.stages.actions.ManageStagesReportsAction"
+                name="manageProbationReportForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/cdr/statistics/stages/ahccstagereports.do" redirect="true" />
+            <forward name="appFailure" path="/cdr/statistics/stages/ahccstagereports.do" />
+        </action>
+        <!-- NEW0648 - Rapports de stage pour agents contractuels (end) -->
+
+        <!-- R2.6 NEW0241: Add page to CDR to show work someone has to do as CDR actor -->
+        <action path="/cdr/statistics/costats"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.COStatsAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.costats" />
+        </action>
+
+        <action path="/cdr/statistics/rostats"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.ROStatsAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.rostats" />
+        </action>
+        <!-- End NEW0241: Add page to CDR to show work someone has to do as CDR actor -->
+
+        <action path="/cdr/statistics/doubleslistworkrostats"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.HHRDoublesListWorkROAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.doubleslistworkrostats" />
+        </action>
+
+        <!-- R3.1 NEW0350: New dashboard by DG showing missing and overlapping CDRs -->
+        <action path="/cdr/statistics/cdranomaliesstats"
+                type="eu.cec.admin.sysper2.web.cdr.statistics.actions.CDRAnomaliesStatsAction"
+                name="searchStatisticsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.statistics.cdranomaliesstats" />
+        </action>
+        <!-- End NEW0350: New dashboard by DG showing missing and overlapping CDRs -->
+
+        <!-- CDR Training -->
+        <action path="/cdr/training/trainingMap"
+                type="eu.cec.admin.sysper2.web.cdr.overview.actions.ViewTrainingMapAction"
+                name="per_PersonContextForm">
+            <forward name="success" path="cdr.training.viewtrainingmap" />
+        </action>
+        <action path="/cdr/training/trainingPassport"
+                type="eu.cec.admin.sysper2.web.cdr.overview.actions.ViewTrainingPassportAction"
+                name="per_PersonContextForm">
+            <forward name="success" path="cdr.training.viewtrainingpassport" />
+        </action>
+
+
+        <!-- CDR OVERVIEW -->
+        <action path="/cdr/overview/viewHeader"
+                type="eu.cec.admin.sysper2.web.cdr.overview.actions.ViewOverviewHeaderAction">
+            <forward name="success" path="cdr.overview.header.view" />
+        </action>
+
+        <action path="/cdr/overview/cdr_details/viewcdrdetails"
+                type="eu.cec.admin.sysper2.web.cdr.overview.cdr_details.actions.ViewCdrDetailsAction"
+                name="cdrModifyAppraisalPeriodForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="complete.cdr.overview.cdr_details" />
+        </action>
+
+        <action path="/cdr/overview/cdr_details/viewcdrdisabledcomment" forward="cdr.overview.cdr_disabled.motivation.popup" />
+
+        <action path="/cdr/overview/cdr_details/editCdrCommentPopup" forward="cdr.overview.cdr_disabled.motivation.edit.popup" />
+
+        <!-- R2.5 NEW0219 [Presentation]: flag job occupation status as not requiring a CDR -->
+        <action path="/cdr/overview/cdr_details/disablereports"
+                type="eu.cec.admin.sysper2.web.cdr.overview.cdr_details.actions.DisableCDRAction"
+                name="jobHolder_cdrHistory_Form"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/cdr/overview/cdr_details/viewcdrdetails.do" redirect="true" />
+            <forward name="appFailure" path="/cdr/overview/cdr_details/viewcdrdetails.do" />
+        </action>
+
+        <action path="/cdr/overview/cdr_details/enablereports"
+                type="eu.cec.admin.sysper2.web.cdr.overview.cdr_details.actions.EnableCDRAction">
+            <forward name="success" path="/cdr/overview/cdr_details/viewcdrdetails.do" redirect="true" />
+            <forward name="appFailure" path="/cdr/overview/cdr_details/viewcdrdetails.do" />
+        </action>
+        <!-- End NEW0219 [Presentation]: flag job occupation status as not requiring a CDR -->
+
+        <action path="/cdr/objectives/managejobobjectives"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.ManageJobOrientedObjectivesAction">
+            <forward name="success" path="complete.cdr.overview.objectives" />
+        </action>
+
+        <action path="/cdr/objectives/managepersonalobjectives"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.ManagePersonalObjectivesAction">
+            <forward name="success" path="complete.cdr.overview.objectives" />
+        </action>
+
+        <!-- CDR OBJECTIVES -->
+        <action path="/cdr/objectives/viewHeader"
+                type="eu.cec.admin.sysper2.web.cdr.overview.actions.ViewOverviewHeaderAction">
+            <forward name="success" path="cdr.objectives.header.view" />
+        </action>
+
+        <action path="/cdr/objectives/validateobjectivesframe" forward="frame.cdr.objectives.validate.objectives" />
+        <!-- CHG1196: objectives improve validation screen / rendering obsolete in batch-->
+        <action path="/cdr/objectives/renderobjectivesobsoleteframe" forward="frame.cdr.objectives.render.obsolete.objectives" />
+        <!-- CHG1196: objectives improve validation screen / rendering obsolete in batch-->
+
+        <action path="/cdr/objectives/editobjectiveframe" forward="frame.cdr.objectives.edit.objective" />
+        <action path="/cdr/objectives/newobjectiveframe" forward="frame.cdr.objectives.new.objective" />
+        <!-- R2.6 CHG0570 (Object): Re-use objectives from another job -->
+        <action path="/cdr/objectives/reuseobjectiveframe" forward="frame.cdr.objectives.reuse.objective" />
+        <!-- End CHG0570 (Object): Re-use objectives from another job -->
+        <action path="/cdr/objectives/displayorderobjectivesframe" forward="frame.cdr.objectives.display.order.objectives" />
+        <action path="/cdr/objectives/changevisibilityobjectivesframe" forward="frame.cdr.objectives.change.visibility.objectives" />
+
+
+        <action path="/cdr/objectives/editobjective"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.EditObjectiveAction"
+                name="editObjectiveForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.objectives.edit.objective" />
+        </action>
+
+        <action path="/cdr/objectives/newobjective"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.NewObjectiveAction"
+                name="editObjectiveForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.objectives.new.objective" />
+        </action>
+
+        <!-- R2.6 CHG0570 (Object): Re-use objectives from another job -->
+        <action path="/cdr/objectives/reuseobjective"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.ReuseObjectiveAction"
+                name="reuseObjectiveForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.objectives.reuse.objective" />
+        </action>
+
+        <action
+                path="/cdr/objectives/actionpane/reuseObjectives"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="buttons.cdr.objectives.reuse.objective" />
+        </action>
+
+        <!-- NEW0467: Re-use objectives from current job -->
+        <action path="/cdr/objectives/reuseobjectivesjob"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.ReuseObjectivesJobAction"
+                name="reuseObjectiveForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.objectives.reuse.objectives.job" />
+        </action>
+        <action
+                path="/cdr/objectives/actionpane/reuseObjectivesJob"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="buttons.cdr.objectives.reuse.objective" />
+        </action>
+
+        <!-- BUG1457: on ne peut pas reutiliser les objectifs personnels -->
+        <action path="/cdr/objectives/savereusedobjectives"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.SaveReusedObjectivesAction"
+                name="reuseObjectiveForm"
+                scope="request"
+                validate="false">
+            <forward name="success-add-quit" path="/cdr/objectives/savereusedObjectives_success.do" redirect="true" />
+            <forward name="success-add-return-job-objectives" path="/cdr/objectives/reuseobjectivesjob.do" redirect="true" />
+            <forward name="success-add-return-per-objectives" path="/cdr/objectives/reuseobjective.do" redirect="true" />
+            <forward name="success" path="/cdr/objectives/reuseobjective.do" redirect="true" />
+            <forward name="failure" path="/cdr/objectives/reuseobjective.do" />
+        </action>
+        <!-- BUG1457: on ne peut pas reutiliser les objectifs personnels -->
+        <!-- End NEW0467: Re-use objectives from current job -->
+
+        <action path="/cdr/objectives/savereusedObjectives_success" forward="objectives.reused.modified.forwarding.save" />
+        <!-- End BUG1457: on ne peut pas reutiliser les objectifs personnels -->
+        <!-- End CHG0570: Re-use objectives from another job -->
+
+        <action path="/cdr/objectives/displayorderobjectives"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.DisplayOrderObjectivesAction"
+                name="displayOrderObjectivesForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.objectives.display.order.objectives" />
+        </action>
+
+        <action path="/cdr/objectives/validateobjectives"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.ValidateObjectivesAction"
+                name="validateObjectivesForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.objectives.validate.objectives" />
+        </action>
+
+        <!-- CHG1196: objectives improve validation screen / rendering obsolete in batch--><!--todo: change action!! add definition of forward-->
+        <action path="/cdr/objectives/renderobjectivesobsolete"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.RenderObjectivesObsoleteAction"
+                name="validateObjectivesForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="cdr.objectives.render.obsolete.objectives" />
+        </action>
+        <!-- CHG1196: objectives improve validation screen / rendering obsolete in batch-->
+
+        <action path="/cdr/objectives/changevisibilityobjectives"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.ChangeVisibilityObjectivesAction">
+            <forward name="success" path="cdr.objectives.change.visibility.objectives" />
+        </action>
+
+        <action path="/cdr/objectives/viewobjective"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.ViewObjectiveAction">
+            <forward name="success" path="complete.cdr.objectives.view.objective" />
+        </action>
+
+        <action path="/org/reorg/reorganisationPDF"
+                type="eu.cec.admin.sysper2.web.org.reorg.actions.ReorganisationPDFAction">
+        </action>
+
+        <!-- CDR OBJECTIVES POPUP -->
+        <action path="/cdr/objectives/concludeversion_popup" forward="cdr.objectives.conclude.version.popup" />
+        <action path="/cdr/objectives/validateversion_popup" forward="cdr.objectives.validate.version.popup" />
+
+        <action path="/cdr/objectives/reconductedjobobjective_popup"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.ReconductJobObjectiveAction">
+            <forward name="success" path="cdr.objectives.reconducted.objective.popup" />
+        </action>
+
+        <action path="/cdr/objectives/reconductedpersonalobjective_popup"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.ReconductPersonalObjectiveAction">
+            <forward name="success" path="cdr.objectives.reconducted.objective.popup" />
+        </action>
+
+        <action path="/cdr/objectives/concludeversion"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.ConcludeObjectiveAction"
+                name="objectiveVersionForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/cdr/objectives/viewobjective.do" redirect="true" />
+            <forward name="appFailure" path="/cdr/objectives/viewobjective.do" />
+        </action>
+
+        <action path="/cdr/objectives/validateversion"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.ValidateObjectiveAction"
+                name="objectiveVersionForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/cdr/objectives/viewobjective.do" redirect="true" />
+            <forward name="appFailure" path="/cdr/objectives/viewobjective.do" />
+        </action>
+
+        <action path="/cdr/objectives/deleteversion"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.DeleteObjectiveAction"
+                name="objectiveVersionForm"
+                scope="request"
+                validate="false">
+            <forward name="success-version" path="/cdr/objectives/viewobjective.do" redirect="true" />
+            <forward name="success-objective" path="/eva/person/viewObjectives.do" redirect="true" />
+            <forward name="appFailure" path="/cdr/objectives/viewobjective.do" />
+        </action>
+
+        <action path="/cdr/objectives/saveobjective"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.SaveObjectiveAction"
+                name="editObjectiveForm"
+                scope="request"
+                validate="false">
+            <forward name="success-add" path="/cdr/objectives/saveNewObjective_success.do" redirect="true" />
+            <forward name="success-add-job-again" path="/cdr/objectives/newobjective.do" redirect="true" />
+            <forward name="success-add-personal-again" path="/cdr/objectives/newobjective.do" redirect="true" />
+            <forward name="success-add-return" path="/cdr/objectives/newobjective.do" redirect="true" />
+            <forward name="success-edit" path="/cdr/objectives/saveEditObjective_success.do" redirect="true" />
+            <forward name="failure-objective-add" path="/cdr/objectives/newobjective.do" />
+            <forward name="failure-objective-edit" path="/cdr/objectives/editobjective.do" />
+        </action>
+
+        <action path="/cdr/objectives/saveNewObjective_success" forward="objective.new.modified.forwarding.save" />
+        <action path="/cdr/objectives/saveEditObjective_success" forward="objective.edit.modified.forwarding.save" />
+
+        <action path="/cdr/objectives/objectivesvalidation"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.ObjectivesValidationAction"
+                name="validateObjectivesForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/cdr/objectives/validateObjectives_success.do" />
+            <forward name="appFailure" path="/cdr/objectives/validateobjectives.do" />
+        </action>
+
+        <action path="/cdr/objectives/objectivesRenderObsolete"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.ObjectivesRenderObsoleteAction"
+                name="validateObjectivesForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/cdr/objectives/RenderObjectivesObsolete_success.do" />
+            <forward name="appFailure" path="/cdr/objectives/renderobjectivesobsolete.do" />
+        </action>
+
+        <action path="/cdr/objectives/RenderObjectivesObsolete_success" forward="objectives.modified.forwarding.render.obsolete" />
+
+        <action path="/cdr/objectives/validateObjectives_success" forward="objectives.modified.forwarding.validate" />
+
+        <action path="/cdr/objectives/objectivesdisplayorder"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.ObjectivesDisplayOrderAction"
+                name="displayOrderObjectivesForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/cdr/objectives/displayOrderObjectives_success.do" />
+            <forward name="appFailure" path="/cdr/objectives/displayorderobjectives.do" />
+        </action>
+
+        <action path="/cdr/objectives/displayOrderObjectives_success" forward="objectives.modified.forwarding.display.order" />
+
+        <action path="/cdr/objectives/objectiveschangevisibility"
+                type="eu.cec.admin.sysper2.web.cdr.objectives.actions.ObjectivesChangeVisibilityAction">
+            <forward name="success" path="/cdr/objectives/changeVisibilityObjectivesJob_success.do" />
+            <forward name="appFailure" path="/cdr/objectives/changevisibilityobjectives.do" />
+        </action>
+
+        <action path="/cdr/objectives/changeVisibilityObjectivesJob_success" forward="objectives.job.modified.forwarding.change.visibility" />
+
+        <action path="/cdr/report/assessment/viewCompetenceTypesPopup"
+                type="eu.cec.admin.sysper2.web.cdr.report.assessment.actions.ViewCompetenceTypesAction"
+                name="cdrFormBean"
+                scope="request" validate="false">
+            <forward name="success" path="cdr.report.assessment.competenceTypes" />
+        </action>
+
+        <action path="/cdr/report/selectprintphase_popup" forward="cdr.report.select.print.phase.popup" />
+
+        <action path="/services/pdf/cdr/report/assessmentPDF" type="eu.cec.admin.sysper2.web.services.pdf.actions.CreateAssessmentPDFAction">
+        </action>
+
+        <!-- R5.1 NEW0568: PER - PDFs pour les actes de mutation / chg affectation / reorg <local> -->
+        <action path="/per/jobAssignmentSelectActChangePopup"
+                type="eu.cec.admin.sysper2.web.per.actions.PersonActChangeAssignmentAction"
+                name="per_ActChangeForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="per.job.assignment.select.act.change.popup" />
+        </action>
+
+        <action path="/services/pdf/per/jobAssignmentActChange"
+                type="eu.cec.admin.sysper2.web.services.pdf.actions.CreateActChangeAssignmentPDFAction"
+                name="per_ActChangeForm"
+                scope="request"
+                validate="false">
+        </action>
+        <!-- End NEW0568: PER - PDFs pour les actes de mutation / chg affectation / reorg <local> -->
+
+        <action path="/common/calendar_js" forward="/jsp/common/calendar.jsp" />
+        <action path="/common/calendar_html" forward="/jsp/common/calendar_html.jsp" />
+
+
+        <!-- ****************************** -->
+        <!-- begin organisation list definitions -->
+        <!-- ****************************** -->
+
+        <action path="/org/reorg/overview/viewReorganisations"
+                type="eu.cec.admin.sysper2.web.org.reorg.actions.ViewReorganisationsAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_overview_SearchForm">
+            <forward name="success" path="org.reorg.overview.reorganisations.view" />
+        </action>
+
+        <action path="/org/reorg/addReorganisation"
+                type="eu.cec.admin.sysper2.web.org.reorg.properties.actions.EditPropertiesAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_properties_PropertiesForm">
+            <forward name="success" path="org.reorg.reorganisation.add" />
+        </action>
+
+        <action path="/org/reorg/addReorganisationFrame" forward="frame.org.reorg.reorganisation.add" />
+        <action path="/org/reorg/saveReorganisation_success" forward="edit_forwarder.org.reorg.reorganisation.create" />
+
+        <action path="/org/reorg/saveReorganisation"
+                type="eu.cec.admin.sysper2.web.org.reorg.properties.actions.SavePropertiesAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_properties_PropertiesForm">
+            <forward name="success" path="/org/reorg/saveReorganisation_success.do" redirect="true" />
+            <forward name="appFailure" path="/org/reorg/addReorganisation.do" />
+        </action>
+
+        <!-- approve Reorganisation -->
+        <action path="/org/reorg/details/procedure/approveProcedure"
+                type="eu.cec.admin.sysper2.web.org.reorg.procedure.actions.ApproveReorganisationAction"
+                name="org_reorg_details_procedure_WorkflowForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/org/reorg/details/procedure/viewProcedure.do" redirect="true" />
+            <forward name="appFailure" path="/org/reorg/details/procedure/viewProcedure.do" />
+            <forward name="webFailure" path="/org/reorg/details/procedure/viewProcedure.do" />
+        </action>
+
+        <!-- reject Reorganisation -->
+        <action path="/org/reorg/details/procedure/rejectProcedure"
+                type="eu.cec.admin.sysper2.web.org.reorg.procedure.actions.RejectReorganisationAction"
+                name="org_reorg_details_procedure_WorkflowForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/org/reorg/details/procedure/viewProcedure.do" redirect="true" />
+            <forward name="appFailure" path="/org/reorg/details/procedure/viewProcedure.do" />
+            <forward name="webFailure" path="/org/reorg/details/procedure/viewProcedure.do" />
+        </action>
+
+        <!-- delete details reorganisation -->
+        <action path="/org/reorg/details/deleteReorganisation"
+                type="eu.cec.admin.sysper2.web.org.reorg.actions.DeleteReorganisationAction"
+                name="org_reorg_details_ReorganisationContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/org/reorg/overview/viewReorganisations.do" redirect="true" />
+        </action>
+
+        <!-- view details properties -->
+        <action path="/org/reorg/details/properties/viewProperties"
+                type="eu.cec.admin.sysper2.web.org.reorg.properties.actions.ViewPropertiesAction"
+                name="org_reorg_details_ReorganisationContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="org.reorg.details.properties.view" />
+        </action>
+
+        <!-- edit details properties -->
+        <action path="/org/reorg/details/properties/editProperties"
+                type="eu.cec.admin.sysper2.web.org.reorg.properties.actions.EditPropertiesAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_properties_PropertiesForm">
+            <forward name="success" path="org.reorg.details.properties.edit" />
+        </action>
+
+        <action path="/org/reorg/details/properties/editPropertiesFrame" forward="frame.org.reorg.details.properties.edit" />
+        <action path="/org/reorg/details/properties/saveProperties_success" forward="edit_forwarder.org.reorg.details.properties" />
+
+        <action path="/org/reorg/details/properties/saveProperties"
+                type="eu.cec.admin.sysper2.web.org.reorg.properties.actions.SavePropertiesAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_properties_PropertiesForm">
+            <forward name="success" path="/org/reorg/details/properties/saveProperties_success.do" redirect="true" />
+            <forward name="appFailure" path="/org/reorg/details/properties/editProperties.do" />
+        </action>
+
+        <!-- view details movements -->
+        <action path="/org/reorg/details/movements/viewMovements"
+                type="eu.cec.admin.sysper2.web.org.reorg.movements.actions.ViewMovementsAction"
+                name="org_reorg_details_ReorganisationContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="org.reorg.details.movements.view" />
+        </action>
+
+        <!-- view details overview -->
+        <action path="/org/reorg/details/overview/viewProposals"
+                type="eu.cec.admin.sysper2.web.org.reorg.overview.actions.ViewProposalsAction"
+                name="org_reorg_details_ReorganisationContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="org.reorg.details.overview.view" />
+        </action>
+
+        <!-- view workflow comment popup -->
+        <action path="/org/reorg/details/overview/popup/viewComment" forward="org.reorg.details.overview.motivation.view.popup" />
+
+        <!-- undo proposal -->
+        <action path="/org/reorg/details/overview/undoProposal"
+                type="eu.cec.admin.sysper2.web.org.reorg.overview.actions.UndoProposalAction"
+                name="org_reorg_details_ReorganisationContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/org/reorg/details/overview/viewProposals.do" redirect="true" />
+        </action>
+
+        <!-- edit details overview order -->
+        <action path="/org/reorg/details/overview/editProposalsOrder"
+                type="eu.cec.admin.sysper2.web.org.reorg.overview.actions.EditProposalsOrderAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_overview_ProposalsOrderForm">
+            <forward name="success" path="org.reorg.details.overview.order.edit" />
+        </action>
+
+        <action path="/org/reorg/details/overview/editProposalsOrderFrame" forward="frame.org.reorg.details.overview.order.edit" />
+        <action path="/org/reorg/details/overview/saveProposalsOrder_success" forward="edit_forwarder.org.reorg.details.overview.order" />
+
+        <action path="/org/reorg/details/overview/saveProposalsOrder"
+                type="eu.cec.admin.sysper2.web.org.reorg.overview.actions.SaveProposalsOrderAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_overview_ProposalsOrderForm">
+            <forward name="success" path="/org/reorg/details/overview/saveProposalsOrder_success.do" redirect="true" />
+            <forward name="appFailure" path="/org/reorg/details/overview/editProposalsOrder.do" />
+        </action>
+
+        <!-- edit chart entity display order -->
+        <action path="/org/reorg/details/organisation/chart/editEntityOrder"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.EditEntityOrderAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_organisation_EntityOrderForm">
+            <forward name="success" path="org.reorg.details.organisation.chart.order.edit" />
+        </action>
+
+        <action path="/org/reorg/details/organisation/chart/editEntityOrderFrame" forward="frame.org.reorg.details.organisation.chart.order.edit" />
+        <action path="/org/reorg/details/organisation/chart/saveEntityOrder_success" forward="edit_forwarder.org.reorg.details.organisation.chart.order" />
+
+        <action path="/org/reorg/details/organisation/chart/saveEntityOrder"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.SaveEntityOrderAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_organisation_EntityOrderForm">
+            <forward name="success" path="/org/reorg/details/organisation/chart/saveEntityOrder_success.do" redirect="true" />
+            <forward name="appFailure" path="/org/reorg/details/organisation/chart/editEntityOrder.do" />
+        </action>
+
+        <!-- view details procedure -->
+        <action path="/org/reorg/details/procedure/viewProcedure"
+                type="eu.cec.admin.sysper2.web.org.reorg.procedure.actions.ViewProcedureAction"
+                name="org_reorg_details_ReorganisationContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="org.reorg.details.procedure.view" />
+        </action>
+
+        <!-- view workflow comment popup -->
+        <action path="/org/reorg/details/procedure/popup/viewComment" forward="org.reorg.details.procedure.motivation.view.popup" />
+
+        <!-- send reorganisation for approval motivation popup -->
+        <action path="/org/reorg/details/procedure/sendForApprovalPopup" forward="org.reorg.details.procedure.motivation.send_for_approval" />
+
+        <!-- approve reorganisation motivation popup -->
+        <action path="/org/reorg/details/procedure/approvePopup" forward="org.reorg.details.procedure.motivation.approve" />
+
+        <!-- reject reorganisation motivation popup -->
+        <action path="/org/reorg/details/procedure/rejectPopup" forward="org.reorg.details.procedure.motivation.reject" />
+
+        <!-- view details organisation properties -->
+        <action path="/org/reorg/details/organisation/properties/viewProperties"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.ViewPropertiesAction"
+                name="org_reorg_details_ReorganisationContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="org.reorg.details.organisation.properties.view" />
+        </action>
+
+        <!-- view details organisation chart -->
+        <action path="/org/reorg/details/organisation/chart/viewChart"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.ViewChartAction"
+                name="org_reorg_details_ReorganisationContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="org.reorg.details.organisation.chart.view" />
+        </action>
+
+        <!-- view details organisation jobs -->
+        <action path="/org/reorg/details/organisation/jobs/viewJobs"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.ViewJobsAction"
+                name="org_reorg_details_ReorganisationContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="org.reorg.details.organisation.jobs.view" />
+        </action>
+
+        <!-- edit details organisation chart entity -->
+        <action path="/org/reorg/details/organisation/chart/editEntity"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.EditEntityAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_organisation_EntityForm">
+            <forward name="success" path="org.reorg.details.organisation.chart.entity.edit" />
+        </action>
+
+        <action path="/org/reorg/details/organisation/chart/editEntityFrame" forward="frame.org.reorg.details.organisation.chart.entity.edit" />
+        <action path="/org/reorg/details/organisation/chart/saveEntity_success" forward="edit_forwarder.org.reorg.details.organisation.chart.entity.edit" />
+
+        <action path="/org/reorg/details/organisation/chart/saveEditEntity"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.SaveEntityAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_organisation_EntityForm">
+            <forward name="success" path="/org/reorg/details/organisation/chart/saveEntity_success.do" redirect="true" />
+            <forward name="appFailure" path="/org/reorg/details/organisation/chart/editEntity.do" />
+        </action>
+
+        <action path="/org/reorg/details/organisation/chart/selectParentPopup"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.SelectParentPopupAction"
+                name="org_reorg_details_organisation_SelectReorgScopeForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/org/selectScope.jsp" />
+        </action>
+
+        <!-- create organisation chart entity -->
+        <action path="/org/reorg/details/organisation/chart/createEntity"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.EditEntityAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_organisation_EntityForm">
+            <forward name="success" path="org.reorg.details.organisation.chart.entity.create" />
+        </action>
+
+        <action path="/org/reorg/details/organisation/chart/actionpane/createEntity"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="action_pane.org.reorg.details.organisation.chart.entity.create" />
+        </action>
+
+        <action path="/org/reorg/details/organisation/chart/saveEntity_continue"
+                forward="edit_forwarder.org.reorg.details.organisation.chart.entity.create_job" />
+        <action path="/org/reorg/details/organisation/chart/createEntityFrame" forward="frame.org.reorg.details.organisation.chart.entity.create" />
+
+        <action path="/org/reorg/details/organisation/chart/saveCreateEntity"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.SaveEntityAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_organisation_EntityForm">
+            <forward name="success" path="/org/reorg/details/organisation/chart/saveEntity_success.do" redirect="true" />
+            <forward name="success-continue" path="/org/reorg/details/organisation/chart/saveEntity_continue.do" redirect="true" />
+            <forward name="appFailure" path="/org/reorg/details/organisation/chart/createEntity.do" />
+        </action>
+
+        <!-- remove organisation chart entity motivation popup -->
+        <action path="/org/reorg/details/organisation/chart/deleteEntityPopup" forward="org.reorg.details.organisation.chart.entity.remove.motivation.popup" />
+
+        <!-- delete details organisation chart entity -->
+        <action path="/org/reorg/details/organisation/chart/deleteEntity"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.DeleteEntityAction"
+                name="org_reorg_details_ReorganisationContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/org/reorg/details/organisation/chart/viewChart.do" redirect="true" />
+        </action>
+
+        <!-- edit details organisation jobs job -->
+        <action path="/org/reorg/details/organisation/jobs/editJob"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.EditJobAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_organisation_JobForm">
+            <forward name="success" path="org.reorg.details.organisation.jobs.job.edit" />
+        </action>
+
+        <action path="/org/reorg/details/organisation/jobs/editJobFrame" forward="frame.org.reorg.details.organisation.jobs.job.edit" />
+        <action path="/org/reorg/details/organisation/jobs/saveJob_success" forward="edit_forwarder.org.reorg.details.organisation.jobs.job.edit" />
+
+        <action path="/org/reorg/details/organisation/jobs/saveEditJob"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.SaveJobAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_organisation_JobForm">
+            <forward name="success" path="/org/reorg/details/organisation/jobs/saveJob_success.do" redirect="true" />
+            <forward name="appFailure" path="/org/reorg/details/organisation/jobs/editJob.do" />
+        </action>
+
+        <!-- create organisation jobs job -->
+        <action path="/org/reorg/details/organisation/jobs/createJob"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.EditJobAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_organisation_JobForm">
+            <forward name="success" path="org.reorg.details.organisation.jobs.job.create" />
+        </action>
+
+        <action path="/org/reorg/details/organisation/jobs/actionpane/createJob"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="action_pane.org.reorg.details.organisation.jobs.job.create" />
+        </action>
+
+        <action path="/org/reorg/details/organisation/jobs/createJobFrame" forward="frame.org.reorg.details.organisation.jobs.job.create" />
+        <action path="/org/reorg/details/organisation/jobs/saveJob_continue" forward="edit_forwarder.org.reorg.details.organisation.jobs.job.assign_job" />
+
+        <action path="/org/reorg/details/organisation/jobs/saveCreateJob"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.SaveJobAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_organisation_JobForm">
+            <forward name="success" path="/org/reorg/details/organisation/jobs/saveJob_success.do" redirect="true" />
+            <forward name="success-continue" path="/org/reorg/details/organisation/jobs/saveJob_continue.do" redirect="true" />
+            <forward name="appFailure" path="/org/reorg/details/organisation/jobs/createJob.do" />
+        </action>
+
+        <!-- remove organisation chart entity motivation popup -->
+        <action path="/org/reorg/details/organisation/jobs/deleteJobPopup" forward="org.reorg.details.organisation.jobs.job.remove.motivation.popup" />
+
+        <!-- edit details organisation jobs assignment -->
+        <action path="/org/reorg/details/organisation/jobs/editAssignment"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.EditAssignmentAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_organisation_AssignmentForm">
+            <forward name="success" path="org.reorg.details.organisation.jobs.assignment.edit" />
+        </action>
+
+        <action path="/org/reorg/details/organisation/jobs/editAssignmentFrame" forward="frame.org.reorg.details.organisation.jobs.assignment.edit" />
+        <action path="/org/reorg/details/organisation/jobs/saveAssignment_success"
+                forward="edit_forwarder.org.reorg.details.organisation.jobs.assignment.edit" />
+
+        <action path="/org/reorg/details/organisation/jobs/saveAssignment"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.SaveAssignmentAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_organisation_AssignmentForm">
+            <forward name="success" path="/org/reorg/details/organisation/jobs/saveAssignment_success.do" redirect="true" />
+            <forward name="appFailure" path="/org/reorg/details/organisation/jobs/editAssignment.do" />
+        </action>
+
+        <!-- delete details organisation jobs job -->
+        <!-- @todo create a more specific form ? or use request.getParameter() ? -->
+        <action path="/org/reorg/details/organisation/jobs/deleteJob"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.DeleteJobAction"
+                name="org_reorg_details_ReorganisationContextForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/org/reorg/details/organisation/jobs/viewJobs.do" redirect="true" />
+        </action>
+
+        <!-- view managementjob popup -->
+        <action path="/org/reorg/details/organisation/jobs/viewJobPopup"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.ViewJobPopupAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_organisation_JobForm">
+            <forward name="success" path="/jsp/org/reorg/organisation/viewJobPopup.jsp" />
+        </action>
+
+        <!-- view management job assignment popup -->
+        <action path="/org/reorg/details/organisation/jobs/viewAssignmentPopup"
+                type="eu.cec.admin.sysper2.web.org.reorg.organisation.actions.ViewAssignmentPopupAction"
+                scope="request"
+                validate="false"
+                name="org_reorg_details_organisation_AssignmentForm">
+            <forward name="success" path="/jsp/org/reorg/organisation/viewAssignmentPopup.jsp" />
+        </action>
+
+        <!-- CHG1240: hyperjump facility in org chart navigator-->
+        <action path="/org/getOuByAcronymPopup"
+                type="eu.cec.admin.sysper2.web.org.actions.OrgNavigatorAction"
+                scope="request" validate="false"
+                name="org_OrgNavigator_Form">
+            <forward name="success" path="jump.to.orgunit.with.acronym.popup" />
+        </action>
+        <!-- END CHG1240: hyperjump facility in org chart navigator-->
+
+        <!-- select person occupation popup (begin) -->
+        <action
+                path="/job/selectPersonOccupationPopup"
+                type="eu.cec.admin.sysper2.web.job.actions.SelectPersonOccupationPopupAction"
+                name="job_selectPersonOccupationForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="job.person_occupation.popup.select" />
+        </action>
+        <!-- select person occupation popup (end) -->
+
+        <!-- select city from a vacancy (begin) -->
+        <action path="/common/selectcitypopup"
+                type="eu.cec.admin.sysper2.web.common.actions.SelectCityPopupAction"
+                name="common_selectCityForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="common.select.city.popup" />
+        </action>
+        <!-- select city from a vacancy (end) -->
+
+        <!-- select country popup (begin) -->
+        <action path="/common/selectcountrypopup"
+                type="eu.cec.admin.sysper2.web.common.actions.SelectCountryPopupAction"
+                name="common_selectCountryForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="common.select.country.popup" />
+        </action>
+        <!-- select country popup (end) -->
+
+        <!-- NEW0655: create language selection popup (begin) -->
+        <!-- select language popup (begin) -->
+        <action path="/common/selectLanguagePopup"
+                type="eu.cec.admin.sysper2.web.common.actions.SelectLanguagePopupAction"
+                name="common_selectLanguageForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="common.select.language.popup" />
+        </action>
+        <!-- select language popup (end) -->
+        <!-- NEW0655: create language selection popup (end) -->
+
+        <!-- R4.1 NEW0488: INFOTEL dashboard for reorg follow up -->
+        <!-- organisational units dashboard (begin) -->
+        <action path="/org/statistics/organisationalUnitsList"
+                type="eu.cec.admin.sysper2.web.org.statistics.actions.SearchNewAndObsoleteOrgUnitAction"
+                name="org_statistics_searchOrganisationalUnitsForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="org.statistics.orgunitsliststats" />
+            <forward name="appFailure" path="org.statistics.orgunitsliststats" />
+        </action>
+        <!-- organisational units dashboard (end) -->
+        <!-- End NEW0488: INFOTEL dashboard for reorg follow up -->
+
+
+        <action path="/services/workflow/refreshNextAxtor"
+            type="eu.cec.admin.sysper2.web.wfl.actions.RefreshNextActorAction"
+            name="wfl_next_actor_refreshment_form"
+            scope="request"
+            validate="false">
+            <forward name="success" path="/services/viewLastNavigation.do" redirect="true"/>
+            <forward name="appFailure" path="/services/viewLastNavigation.do"/>
+            <forward name="webFailure" path="/services/viewLastNavigation.do"/>
+        </action>
+
+        <action path="/services/workflow/editMotivationPopup"
+                type="eu.cec.admin.sysper2.web.wfl.actions.EditWorkflowMotivationPopupAction"
+                name="wfl_workflow_motivation_popup_form"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.workflow.motivation.popup.edit" />
+        </action>
+
+        <action path="/services/workflow/viewMotivationPopup"
+                type="eu.cec.admin.sysper2.web.wfl.actions.ViewWorkflowMotivationPopupAction"
+                name="wfl_workflow_motivation_popup_form"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.workflow.motivation.popup.view" />
+        </action>
+
+        <action path="/services/default_forwarder_success" forward="common.edit_forwarder" />
+
+        <action path="/services/viewLastNavigation"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewLastNavigationAction" />
+
+        <!-- ****************************** -->
+        <!-- end organisation list definitions -->
+        <!-- ****************************** -->
+
+        <!-- export a Table object to excel -->
+        <action path="/services/tableToExcel"
+                type="eu.cec.admin.sysper2.web.common.actions.ExportTableToExcelAction"/>
+
+        <action path="/logout"
+        		name="singleSignOutForm"
+                type="eu.cec.admin.sysper2.web.common.actions.SingleSignOutAction">
+                <forward name="success" path="common.singleSignOut" />
+		</action>
+		
+		 <action path="/services/attachments/addAttachmentFrame" forward="frame.services.attachments.add.attachment" />
+		
+		<action path="/services/attachments/addAttachment"
+                type="eu.cec.admin.sysper2.web.services.attachments.actions.AddAttachmentAction"
+                name="attachmentForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.attachments.add.attachment" />
+        </action>
+        
+        <action path="/services/attachments/savepane/addAttachment"
+                type="eu.cec.admin.sysper2.web.common.actions.ViewSavePane">
+            <forward name="success" path="services.attachments.action_pane.add_attachment" />
+        </action>
+        
+
+        <action path="/services/pdf/viewNotificationFile"
+                type="eu.cec.admin.sysper2.web.services.pdf.actions.CreateHTMLNotificationPDFAction"/>        
+                
+        <action path="/car/sire"
+                type="eu.cec.admin.sysper2.web.car.files.recruit.actions.ViewSireDossiersAction"/>               
+         
+        <action path="/services/editToDoTask"
+                type="eu.cec.admin.sysper2.web.services.task.actions.EditTODOTaskItemAction"
+                name="services_taskForm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="services.toDoTask.edit" /> 
+        </action> 
+        
+         <action path="/services/saveToDoTask"
+                type="eu.cec.admin.sysper2.web.services.task.actions.SaveTODOTaskItemAction"
+                name="services_taskForm"
+                scope="request"
+                validate="false">            
+        </action> 
+        <action path="/services/viewMyToDoTaskItems"
+                type="eu.cec.admin.sysper2.web.services.task.actions.ViewTODOTaskItemsAction"
+                name="services_taskForm"
+                scope="request"
+                validate="false">
+            	<forward name="success" path="services.menu.myTasksContent" /> 
+            	<forward name="success-fullrefresh" path="services.menu.myTasks" />
+            	<forward name="success-headerRefresh" path="services.menu.myHeaderTasks" /> 
+            	<forward name="success-headerMessagesRefresh" path="services.menu.myHeaderMessages" />
+        </action> 
+        <action path="/services/deleteToDoTask"
+                type="eu.cec.admin.sysper2.web.services.task.actions.DeleteTODOTaskItemAction"
+                name="services_taskForm"
+                scope="request"
+                validate="false">            
+        </action>
+        
+        <action path="/services/viewMyFavourites"
+                type="eu.cec.admin.sysper2.web.services.links.actions.ViewFavouritesAction"
+                name="services_linksForm"
+                scope="request"
+                validate="false">
+                <forward name="success" path="services.menu.myMenuItems" /> 
+        </action>  
+        
+         <action path="/services/addFavourite"
+                type="eu.cec.admin.sysper2.web.services.links.actions.AddFavouritesAction"
+                name="services_linksForm"
+                scope="request"
+                validate="false">
+                <forward name="success" path="/services/viewMyFavourites.do" />        	
+        </action> 
+        
+        <action path="/services/deleteFavourite"
+                type="eu.cec.admin.sysper2.web.services.links.actions.DeleteFavouritesAction"
+                name="services_linksForm"
+                scope="request"
+                validate="false">            	
+        </action>
+        
+        <!-- <action path="/services/hideTutorial"
+                type="eu.cec.admin.sysper2.web.services.tutorial.actions.HideTutorialAction"
+                name="services_linksForm"
+                scope="request"
+                validate="false">            	
+        </action>
+        <action path="/services/showTutorial"
+                type="eu.cec.admin.sysper2.web.services.tutorial.actions.ShowTutorialAction"
+                name="services_linksForm"
+                scope="request"
+                validate="false">            	
+        </action>     -->   
+        <action path="/services/hideTutorial"
+                type="eu.cec.admin.sysper2.web.services.tutorial.actions.HideTutorialAction"
+                scope="request"
+                validate="false">            	
+        </action>
+        <action path="/services/showTutorial"
+                type="eu.cec.admin.sysper2.web.services.tutorial.actions.ShowTutorialAction"
+                scope="request"
+                validate="false">            	
+        </action>    
+         <action path="/home/demo"
+                type="eu.cec.admin.sysper2.web.common.actions.DemoAction"
+                scope="request"
+                validate="false">
+                <forward name="success" path="demo.page" />             	
+        </action>  
+             
+        <action path="/services/viewAdminAppUrlMsgs"
+        		name="adminAppUrlMessagesFrom"
+                type="eu.cec.admin.sysper2.web.services.app.actions.ViewAdminAppUrlMessagesAction"
+                scope="request"
+                validate="false">
+                <forward name="success" path="services.app.adminUrlMsgs" />             	
+        </action>  
+        <action path="/services/modifyAppUrlMsg"
+        		name="appUrlMessagesModifFrom"
+                type="eu.cec.admin.sysper2.web.services.app.actions.ModifyAppUrlMessageAction"
+                scope="request"
+                validate="false">
+                <forward name="success" path="/services/modifyAppUrlMsg_success.do" />             	
+        </action>  
+             
+         <action path="/services/modifyAppUrlMsg_success" forward="edit_forwarder.services.app.modifyMsg"/>
+    </action-mappings>
+
+    <!-- ===================================== Controller Configuration -->
+
+    <controller
+            processorClass="org.springframework.web.struts.AutowiringTilesRequestProcessor"
+            contentType="text/html; charset=UTF-8"
+            nocache="true"
+            debug="0" />
+
+    <!-- ================================ Message Resources Definitions -->
+
+
+    <message-resources parameter="sysper2_web_pages" />
+
+    <!-- ======================================= Plug Ins Configuration -->
+
+
+    <!-- ========== Tiles plugin ===================  -->
+    <!--												-->
+    <!--
+      This plugin initialize Tiles definition factory. This later can takes some
+      parameters explained here after. The plugin first read parameters from web.xml, then
+      overload them with parameters defined here. All parameters are optional.
+      The plugin should be declared in each struts-config file.
+      - definitions-config: (optional)
+      Specify configuration file names. There can be several comma
+      separated file names (default: ?? )
+      - moduleAware: (optional - struts1.1)
+      Specify if the Tiles definition factory is module aware. If true (default),
+      there will be one factory for each Struts module.
+      If false, there will be one common factory for all module. In this later case,
+      it is still needed to declare one plugin per module. The factory will be
+      initialized with parameters found in the first initialized plugin (generally the
+      one associated with the default module).
+      true : One factory per module. (default)
+      false : one single shared factory for all modules
+      - definitions-parser-validate: (optional)
+      Specify if xml parser should validate the Tiles configuration file.
+      true : validate. DTD should be specified in file header. (default)
+      false : no validation
+
+      Paths found in Tiles definitions are relative to the main context.
+    -->
+    <!-- comment following if struts1.0.x -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin">
+        <set-property property="definitions-config"
+                      value="/WEB-INF/tiles-config.xml,
+			/WEB-INF/tiles-abb-config.xml,
+			/WEB-INF/tiles-act-config.xml,
+			/WEB-INF/tiles-notif-config.xml,
+			/WEB-INF/tiles-bor-config.xml,
+			/WEB-INF/tiles-car-config.xml,
+			/WEB-INF/tiles-rec-config.xml,
+			/WEB-INF/tiles-cdr-config.xml,
+            /WEB-INF/tiles-doc-config.xml,
+			/WEB-INF/tiles-prm-config.xml,
+			/WEB-INF/tiles-vac-config.xml,
+			/WEB-INF/tiles-jhp-config.xml,
+			/WEB-INF/tiles-jis-config.xml,
+			/WEB-INF/tiles-dot-config.xml,
+			/WEB-INF/tiles-per-config.xml,
+			/WEB-INF/tiles-per_fil-config.xml,
+			/WEB-INF/tiles-org-config.xml,
+			/WEB-INF/tiles-att-config.xml,
+			/WEB-INF/tiles-tim-config.xml,
+            /WEB-INF/tiles-eva-config.xml,
+            /WEB-INF/tiles-evl-config.xml,
+            /WEB-INF/tiles-pro-config.xml,
+            /WEB-INF/tiles-eth-config.xml,
+            /WEB-INF/tiles-enc-config.xml" />
+        <set-property property="moduleAware" value="true" />
+        <set-property property="definitions-parser-validate" value="true" />
+    </plug-in>
+
+    <!-- end comment if struts1.0.x -->
+
+    <!--
+     <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+         <set-property
+             property="pathnames"
+             value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+     </plug-in>
+     -->
+    <plug-in className="eu.cec.admin.sysper2.web.common.util.conversion.DateConversionPlugin">
+        <set-property property="patterns" value="dd/MM/yyyy, yyyy-MM-dd, EEE MMM dd hh:mm:ss zzz yyyy"/>
+    </plug-in>
+
+
+</struts-config>
